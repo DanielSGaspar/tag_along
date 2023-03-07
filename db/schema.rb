@@ -14,16 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_125731) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "beaches", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "address"
-    t.bigint "location_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_beaches_on_location_id"
-  end
-
   create_table "bookings", force: :cascade do |t|
     t.bigint "ride_id", null: false
     t.bigint "user_id", null: false
@@ -43,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_125731) do
   end
 
   create_table "rides", force: :cascade do |t|
-    t.bigint "beach_id", null: false
+    t.bigint "location_id", null: false
     t.bigint "user_id", null: false
     t.datetime "date_time"
     t.integer "price"
@@ -51,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_125731) do
     t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["beach_id"], name: "index_rides_on_beach_id"
+    t.index ["location_id"], name: "index_rides_on_location_id"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
 
@@ -67,9 +57,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_125731) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "beaches", "locations"
   add_foreign_key "bookings", "rides"
   add_foreign_key "bookings", "users"
-  add_foreign_key "rides", "beaches"
+  add_foreign_key "rides", "locations"
   add_foreign_key "rides", "users"
 end
