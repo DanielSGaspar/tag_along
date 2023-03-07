@@ -1,0 +1,5 @@
+class RemoveLocationFromRides < ActiveRecord::Migration[7.0]
+  def change
+    remove_column :rides, :location_id, :references
+  end
+end
