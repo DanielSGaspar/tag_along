@@ -5,6 +5,11 @@ class RidesController < ApplicationController
     @beach = Beach.find(params[:beach_id])
   end
 
+  def index
+    @rides = Ride.where(location: params[:search][:location])
+    @rides = Ride.where(location: params[:search][:pick_up_location])
+  end
+
   def create
     @ride = Ride.new(ride_params)
     @location = Location.find(params[:location_id])
