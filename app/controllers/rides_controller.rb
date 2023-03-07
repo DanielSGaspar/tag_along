@@ -6,18 +6,19 @@ class RidesController < ApplicationController
 
   def new
     @ride = Ride.new
-    @location = Location.find(params[:location_id])
-    @beach = Beach.find(params[:beach_id])
   end
 
   def create
     @ride = Ride.new(ride_params)
     @location = Location.find(params[:location_id])
-    @beach = Beach.find(params[:beach_id])
-    @ride.beach = @beach
+    @ride.location = @location
     @ride.user = current_user
-    @ride.save
-    redirect_to location_beach_path(@location, @beach)
+
+    if @ride.save
+      redirect_to dashboard_path #this will be redirected to the user dashboard
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
