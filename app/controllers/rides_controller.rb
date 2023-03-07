@@ -3,6 +3,11 @@ class RidesController < ApplicationController
     @ride = Ride.new
   end
 
+  def index
+    @rides = Ride.where(location: params[:search][:location])
+    @rides = Ride.where(location: params[:search][:pick_up_location])
+  end
+
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
