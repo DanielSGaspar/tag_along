@@ -1,0 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1476937673710-8174834aa065?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <strong><h1>My Locations</h1></strong>
+    <p>Get a ride to your favorite beach.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards-container mt-3 mb-3">
+    <div class="cards">
+      <% @locations.each do |location| %>
+        <div class="card-category" style="background-image: url(https://www.surfholidays.com/assets/images/blog/2016-12-20-Carcavelos_surf_beach_surfholidays_3.jpg)">
+          <%= location.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
