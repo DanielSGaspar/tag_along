@@ -5,7 +5,7 @@
 </div>
 <div class="container mt-3">
   <%= simple_form_for [@ride] do |f|%>
-    <%= f.association :beach%>
+    <%= f.association :beach, collection: Beach.order('name ASC')%>
     <%= f.input :date_time, as: :datetime%>
     <%= f.input :pick_up_location%>
     <%= f.input :seats%>
