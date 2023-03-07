@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708bc0/5842041f4e65fad6a7708bc0_1500.jpg);">
+  <div class="container">
+    <h1>Offer a ride to <%=@beach.name%></h1>
+  </div>
+</div>
+<div class="container mt-3">
+  <%= simple_form_for [@location, @beach, @ride] do |f|%>
+    <%= f.input :date_time%>
+    <%= f.input :seats%>
+    <%= f.input :price%>
+    <%= f.input :pick_up_location%>
+    <%= f.submit%>
+  <% end %>
+</div>
