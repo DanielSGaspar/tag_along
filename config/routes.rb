@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :locations, only: %i[index show] do
+    
     resources :beaches, only: %i[index show]
   end
+
+  get '/locations/:location_id/search', to: "beaches#search"
+
 end
