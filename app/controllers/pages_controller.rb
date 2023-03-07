@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @beaches = Beach.all
   end
 end
