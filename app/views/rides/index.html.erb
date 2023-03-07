@@ -1,0 +1,35 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708bc0/5842041f4e65fad6a7708bc0_1500.jpg);">
+  <div class="btn btn-light rounded-circle ml-3" style="height: 60px; width: 60px;">
+    <div>
+      <div class="align-middle">
+        <h1 style="color: #61D8EF;" class="align-middle"><i class="fa-solid fa-arrow-left"></i></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0;">
+  <div class="container">
+    <h1 class="text-center">Available rides to Sintra</h1>
+      <% @rides.each do |ride|%>
+        <div class="card-location mb-3" style="position: relative; background-color: white; border-radius: 20px; box-shadow: 0px 4px 14px rgba(36, 116, 132, 0.5);">
+          <div class="d-flex">
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708bc0/5842041f4e65fad6a7708bc0_1500.jpg); width: 120px; height: 133px; border-radius: 20px; background-position: cover;">
+            </div>
+            <div>
+              <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" style="border-radius: 50%; height: 24px; width: 24px;" />
+              <div class="card-location-infos">
+                <h2>Driver: Gabriel</h2>
+                <div class="d-flex justify-content-between">
+                  <p class="me-5">When: <%=ride.date_time%></p>
+                  <p class="me-5">Free seats: <%=ride.seats%></p>
+                  <p class="me-5">Price: <%=ride.price%></p>
+                  <button class="btn btn-primary rounded" style="position: absolute; bottom: 20px; right: 20px;">Book Now!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%end%>
+  </div>
+</div>

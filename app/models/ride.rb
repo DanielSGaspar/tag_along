@@ -1,5 +1,4 @@
 class Ride < ApplicationRecord
-  belongs_to :beach
   belongs_to :user
   has_many :bookings
 
