@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :rides, only: %i[index new create update destroy]
+  get '/beach', to: 'rides#beach'
   get '/dashboard', to: 'pages#dashboard'
+
 end

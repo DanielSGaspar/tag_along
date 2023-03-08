@@ -6,5 +6,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @beaches = Beach.all
+    carcavelos = Beach.find
+    @popular
   end
 end
