@@ -6,6 +6,21 @@ class RidesController < ApplicationController
     @rides = Ride.all
   end
 
+  def beach
+    @beach = Beach.find(params[:id])
+    @rides = Ride.where(beach: @beach)
+  end
+
+  def location
+    @location = Location.find(params[:id])
+    beaches = Beach.where(location: @location)
+    @rides = []
+
+    beaches.each do |beach|
+      @rides += beach.rides if beach.rides
+    end
+  end
+
   def new
     @ride = Ride.new
   end

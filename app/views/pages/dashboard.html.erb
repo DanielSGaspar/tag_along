@@ -1,1 +1,75 @@
-<h1>Amazing Dashboard</h1>
+<div class="mt-5">
+  <div class="d-flex justify-content-center">
+    <i class="fa-solid fa-magnifying-glass me-2"></i>
+    <form action="">
+      <input type="date" class="mb-2" style="border: none; background-color: transparent;" label=f>
+    </form>
+    <%# <p style="margin-bottom: 0;">When do you want to surf?</p> %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <hr style="width: 70%; color: #61D8EF; margin-top: 0;">
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="mt-5">Beaches near you</h1>
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="popular-tab" data-bs-toggle="tab" data-bs-target="#popular" type="button" role="tab" aria-controls="home" aria-selected="true">Popular</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="favourites-tab" data-bs-toggle="tab" data-bs-target="#favourites" type="button" role="tab" aria-controls="profile" aria-selected="false">Favorites</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="locations-tab" data-bs-toggle="tab" data-bs-target="#locations" type="button" role="tab" aria-controls="profile" aria-selected="false">Locations</button>
+    </li>
+  </ul>
+  <div class="tab-content mt-3" id="myTabContent">
+    <div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab" style="width: 100%; overflow-x: scroll;">
+      <div>
+        <div class="d-flex">
+          <% @popular.each do |beach| %>
+            <%= render "beach_card", beach: beach %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="favourites" role="tabpanel" aria-labelledby="favourites-tab" style="width: 100%; overflow-x: scroll;">
+
+       <div>
+        <div class="d-flex" style="white-space: nowrap;">
+          <% @favorites.each do |beach| %>
+            <%= render "beach_card", beach: beach %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    <div class="tab-pane fade" id="locations" role="tabpanel" aria-labelledby="locations-tab" style="width: 100%; overflow-x: scroll;">
+      <div>
+        <div class="d-flex" style="white-space: nowrap;">
+          <% @locations.each do |location| %>
+            <%= render "location_card", location: location %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="mt-4">Bookings</h1>
+
+  <%= render "booking_card" %>
+  <%= render "booking_card" %>
+
+</div>
+
+
+<div class="d-flex justify-content-between mt-3 mb-3 p-3" style="font-size: 25px; background-color: grey; margin-bottom: 0;">
+  <div>
+    <i class="fa-solid fa-water"></i>
+  </div>
+  <div>
+    <i class="fa-solid fa-user"></i>
+  </div>
+</div>
