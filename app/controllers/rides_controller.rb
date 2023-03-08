@@ -8,12 +8,14 @@ class RidesController < ApplicationController
     @ride = Ride.new
   end
 
+  def index
+    @rides = Ride.where(location: params[:search][:location])
+    @rides = Ride.where(location: params[:search][:pick_up_location])
+  end
+
   def create
     @ride = Ride.new(ride_params)
-    @location = Location.find(params[:location_id])
-    @ride.location = @location
     @ride.user = current_user
-
     if @ride.save
       redirect_to dashboard_path #this will be redirected to the user dashboard
     else
@@ -24,6 +26,6 @@ class RidesController < ApplicationController
   private
 
   def ride_params
-    params.require(:ride).permit(:seats, :price, :pick_up_location, :date_time)
+    params.require(:ride).permit(:beach_id, :seats, :price, :pick_up_location, :date_time)
   end
 end
