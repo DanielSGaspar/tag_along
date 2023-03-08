@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
-  resources :rides, only: %i[index new create update destroy]
+  
+  resources :rides, only: %i[index new show create update destroy]
   get '/beach/:id', to: 'rides#beach', as: "beach"
   get '/location/:id', to: 'rides#location', as: "location"
   get '/dashboard', to: 'pages#dashboard'
