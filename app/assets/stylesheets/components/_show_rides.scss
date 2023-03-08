@@ -1,0 +1,46 @@
+.show_rides {
+  background-color: rgb(235, 233, 233);
+}
+
+.show_rides .title {
+  color: rgb(12, 12, 12);
+  padding: 24px 24px 32px;
+}
+
+.driver-sesh {
+  overflow: hidden;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.driver-sesh img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 70px;
+}
+
+.driver-sesh h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: -45px;
+}
+
+.driver-sesh p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.driver-sesh .driver-sesh-infos {
+  padding: 16px;
+}
+
+.ride-details h2 {
+  font-size: 23px;
+  padding: 9px;
+  margin-top: -8px;
+}
