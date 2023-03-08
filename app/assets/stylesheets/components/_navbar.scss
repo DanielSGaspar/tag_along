@@ -16,7 +16,6 @@
   width: 40px;
   border-radius: 50%;
 }
-
 .navbar-brand {
   display: flex;
 }
@@ -37,4 +36,15 @@
 
 .navbar-nav {
   margin-right: 1vw;
+}
+
+.mobile-pop {
+  position: absolute;
+  background-color: white;
+  z-index: 9;
+  border: groove;
+  min-height: 10vh;
+  /* min-width: 0vh; */
+  right: 0;
+  padding: 10px;
 }
