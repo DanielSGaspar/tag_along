@@ -44,7 +44,19 @@
   z-index: 9;
   border: groove;
   min-height: 10vh;
-  /* min-width: 0vh; */
   right: 0;
   padding: 10px;
+}
+
+.username {
+  padding-left: 15px;
+  font-weight: bold;
+  color: #6C757D;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .username {
+    padding-left: 1px;
+  }
 }
