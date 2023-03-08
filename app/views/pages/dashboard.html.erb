@@ -16,95 +16,41 @@
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="popular-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Popular</button>
+      <button class="nav-link active" id="popular-tab" data-bs-toggle="tab" data-bs-target="#popular" type="button" role="tab" aria-controls="home" aria-selected="true">Popular</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="favourites-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Favorites</button>
+      <button class="nav-link" id="favourites-tab" data-bs-toggle="tab" data-bs-target="#favourites" type="button" role="tab" aria-controls="profile" aria-selected="false">Favorites</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="favourites-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Locations</button>
+      <button class="nav-link" id="locations-tab" data-bs-toggle="tab" data-bs-target="#locations" type="button" role="tab" aria-controls="profile" aria-selected="false">Locations</button>
     </li>
   </ul>
   <div class="tab-content mt-3" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="popular-tab" style="width: 100%; overflow-x: scroll;">
+    <div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab" style="width: 100%; overflow-x: scroll;">
       <div>
         <div class="d-flex">
-          <div class="card-location me-3" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708bc0/5842041f4e65fad6a7708bc0_1500.jpg)">
-            <h1 style="position: absolute; bottom: 55px; left: 15px; font-size: 35px">Carcavelos</h1>
-            <h3 style="position: absolute; bottom: 35px; left: 15px; font-size: 13px; margin-bottom: 0;"><i class="fa-solid fa-location-dot"></i> Cascais</h3>
-            <div class="d-flex" style="position: absolute; bottom: 30px; right: 15px;">
-              <div class="me-2"style="background-color: green; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center; height: 25px;">
-                  <p><i class="fa-solid fa-wind"></i></p>
-                </div>
-              </div>
-              <div style="background-color: orange; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center;">
-                  <p><i class="fa-solid fa-water"></i></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-location me-3" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://m4e8m5g9.rocketcdn.me/wp-content/uploads/2020/03/Sao-Juliao.jpg)">
-            <h1 style="position: absolute; bottom: 50px; left: 10px; font-size: 35px">São Julião</h1>
-            <h3 style="position: absolute; bottom: 30px; left: 10px; font-size: 13px;"><i class="fa-solid fa-location-dot"></i> Ericeira</h3>
-            <div class="d-flex" style="position: absolute; bottom: 30px; right: 15px;">
-              <div class="me-2"style="background-color: orange; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center; height: 25px;">
-                  <p><i class="fa-solid fa-wind"></i></p>
-                </div>
-              </div>
-              <div style="background-color: red; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center;">
-                  <p><i class="fa-solid fa-water"></i></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-location me-3" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://www.saltywaytravel.com/wp-content/uploads/2020/12/Wave-praia-grande-1-e1607702586978.png)">
-            <h1 style="position: absolute; bottom: 50px; left: 10px; font-size: 35px">Praia Grande</h1>
-            <h3 style="position: absolute; bottom: 30px; left: 10px; font-size: 13px;"><i class="fa-solid fa-location-dot"></i> Sintra</h3>
-            <div class="d-flex" style="position: absolute; bottom: 30px; right: 15px;">
-              <div class="me-2"style="background-color: green; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center; height: 25px;">
-                  <p><i class="fa-solid fa-wind"></i></p>
-                </div>
-              </div>
-              <div style="background-color: green; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center;">
-                  <p><i class="fa-solid fa-water"></i></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-location me-3" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://images.ctfassets.net/4h67cva1xuos/29KY4lWeLGcRQ9EZsyXdGj/d60a7fceeb08581dcfd858e0900ea5c7/Foz_do_Lizandro-HelioAntonio-DSC08837.jpg)">
-            <h1 style="position: absolute; bottom: 50px; left: 10px; font-size: 35px">Foz do Lizandro</h1>
-            <h3 style="position: absolute; bottom: 30px; left: 10px; font-size: 13px;"><i class="fa-solid fa-location-dot"></i> Ericeira</h3>
-            <div class="d-flex" style="position: absolute; bottom: 30px; right: 15px;">
-              <div class="me-2"style="background-color: red; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center; height: 25px;">
-                  <p><i class="fa-solid fa-wind"></i></p>
-                </div>
-              </div>
-              <div style="background-color: red; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
-                <div style="display: flex; justify-content: center;">
-                  <p><i class="fa-solid fa-water"></i></p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <% @popular.each do |beach| %>
+            <%= render "beach_card", beach: beach %>
+          <% end %>
         </div>
       </div>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="favourites-tab" style="width: 100%; overflow-x: scroll;">
+    <div class="tab-pane fade" id="favourites" role="tabpanel" aria-labelledby="favourites-tab" style="width: 100%; overflow-x: scroll;">
+
+       <div>
+        <div class="d-flex" style="white-space: nowrap;">
+          <% @favorites.each do |beach| %>
+            <%= render "beach_card", beach: beach %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    <div class="tab-pane fade" id="locations" role="tabpanel" aria-labelledby="locations-tab" style="width: 100%; overflow-x: scroll;">
       <div>
         <div class="d-flex" style="white-space: nowrap;">
-          <% @beaches.each do |beach| %>
-            <% if beach.location.name == "Mafra" %>
-              <div class="card-location me-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-                  <h1><%= beach.name%></h1>
-              </div>
-            <% end %>
+          <% @locations.each do |location| %>
+            <%= render "location_card", location: location %>
           <% end %>
         </div>
       </div>
@@ -113,29 +59,13 @@
 
   <h1 class="mt-4">Bookings</h1>
 
-  <div style="border-radius: 20px;" class="mt-3">
-    <div class="card-product" style="border-radius: 20px;">
-      <img style="border-radius: 20px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-  </div>
-  <div style="border-radius: 20px;" class="mt-3">
-    <div class="card-product" style="border-radius: 20px;">
-      <img style="border-radius: 20px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-  </div>
+  <%= render "booking_card" %>
+  <%= render "booking_card" %>
 
 </div>
 
 
-<div class="d-flex justify-content-between mt-3 mb-3 p-3" style="font-size: 25px;">
+<div class="d-flex justify-content-between mt-3 mb-3 p-3" style="font-size: 25px; background-color: grey; margin-bottom: 0;">
   <div>
     <i class="fa-solid fa-water"></i>
   </div>

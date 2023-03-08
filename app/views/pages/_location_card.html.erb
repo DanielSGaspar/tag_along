@@ -1,0 +1,18 @@
+<%= link_to location_path(location) do %>
+  <div class="location-card me-3" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1565865735988-fd5752a02846?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)">
+    <h1 style="position: absolute; bottom: 20px; left: 15px; font-size: 35px; margin-bottom: 0;"><%= location.name %></h1>
+    <div class="d-flex" style="background-color: rgba(97, 216, 239, 0.7); font-size: 12px; position: absolute; top: 30px; right: 0; padding: 5px 15px; border-radius: 15px 0 0 15px;"><p style="margin-bottom: 0px;">Rides: <%= location.rides.count %></p></div>
+      <div class="d-flex" style="position: absolute; bottom: 30px; right: 15px;">
+      <div class="me-2"style="background-color: green; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
+        <div style="display: flex; justify-content: center; height: 25px;">
+          <p><i class="fa-solid fa-wind"></i></p>
+        </div>
+      </div>
+      <div style="background-color: orange; border-radius: 50%; font-size: 16px; height: 25px; width: 25px;">
+        <div style="display: flex; justify-content: center;">
+          <p><i class="fa-solid fa-water"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
