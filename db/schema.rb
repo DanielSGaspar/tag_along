@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_023447) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_162904) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_023447) do
     t.bigint "location_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["location_id"], name: "index_beaches_on_location_id"
   end
 
@@ -73,11 +75,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_023447) do
     t.bigint "user_id", null: false
     t.datetime "date_time"
     t.integer "price"
-    t.string "pick_up_location"
     t.integer "seats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "beach_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["beach_id"], name: "index_rides_on_beach_id"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end

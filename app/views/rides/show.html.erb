@@ -1,68 +1,114 @@
-<div class="show_rides">
-  <div class="title">
-    <h1><strong>Quinta, 9 de março</strong></h1>
-  </div>
-</div>
-
-<div class="d-flex justify-content-between">
-  <div class="card-location-infos mx-3 mt-4">
-    <div class="d-flex">
-     <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
-      <div>
-        <p>Rua Marquês de Pombal, n347</p>
-        <div style="font-size: 13px; margin-top: -15px;"><p>Lisboa</p></div>
-      </div>
-    </div>
-    <div class="d-flex">
-     <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
-      <div>
-        <p>Rua da Praia Grande</p>
-        <div style="font-size: 13px; margin-top: -15px;"><p>Sintra</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div>
-  <hr style="border-width: 8px; border-color:#a9a6a6;">
-</div>
+  <div class="show_rides">
+    <div class="title">
+      <h1><strong>Quinta, 9 de março</strong></h1>
+    </div>
+  </div>
 
-<div class="d-flex justify-content-between mx-2" style="margin-bottom: -14px;">
+  <div class="d-flex justify-content-between">
+    <div class="card-location-infos mx-3 mt-4">
+      <div class="d-flex">
+        <div>
+          <p><strong>00:15h</strong></p>
+        </div>
+        <div>
+          <p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p>
+        </div>
+        <div>
+          <p><%= @ride.address %></p>
+          <div style="font-size: 13px; margin-top: -15px;"><p>Lisboa</p></div>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div>
+          <p><strong>04:25h</strong></p>
+        </div>
+      <div><p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+        <div>
+          <p><%= @ride.beach.name %></p>
+          <div style="font-size: 13px; margin-top: -15px;"><p>Sintra</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div>
-    <p>Price per seat:</p>
+    <hr style="border-width: 8px; border-color:#a9a6a6;">
   </div>
-  <div style="position: relative;">
-    <div style="background-color: #61D8EF; border-radius: 35px; height: 26px; width: 55px;">
-      <div style="position: absolute; right: 3px;">€10,00</div>
+
+  <div class="d-flex justify-content-between mx-3" style="margin-bottom: -14px;">
+    <div>
+      <p>Price per seat:</p>
+    </div>
+    <div style="position: relative;">
+      <div style="background-color: #61D8EF; border-radius: 35px; height: 26px; width: 55px;">
+        <div style="position: absolute; right: 3px;">€10,00</div>
+      </div>
     </div>
   </div>
-</div>
 
-<div>
-  <hr style="border-width: 8px; border-color:#a9a6a6;">
-</div>
+  <div>
+    <hr style="border-width: 8px; border-color:#a9a6a6;">
+  </div>
 
-<div>
-  <div class="driver-sesh">
-    <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" />
-    <div class="driver-sesh-infos" style="position: relative">
-      <h2>Driver name</h2>
-      <p>Hello, my name is "Driver name". Born and raised in Portugal and passionate about the waves of our coast.</p>
-      <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
+  <div>
+    <div class="driver-sesh">
+      <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" />
+      <div class="driver-sesh-infos" style="position: relative">
+        <h2>Driver name</h2>
+        <p>Hello, my name is "Driver name". Born and raised in Portugal and passionate about the waves of our coast.</p>
+        <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
+      </div>
     </div>
   </div>
-</div>
 
-<div>
-  <hr style="border-width: 8px; border-color:#a9a6a6;">
-</div>
+  <div>
+    <hr style="border-width: 8px; border-color:#a9a6a6;">
+  </div>
 
-<div>
-  <div class="ride-details">
-    <h2>Ride Details</h2>
+  <div>
+    <div class="ride-details">
+      <h2>Ride Details:</h2>
+    </div>
+    <div class="mx-3 permission-ride">
+      <div class="d-flex">
+        <div>
+          <i class="fa-solid fa-paw paw-icon me-3"></i>
+        </div>
+        <div>
+          <p>pets allowed</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div>
+          <i class="fa-solid fa-ban-smoking me-3"></i>
+        </div>
+        <div>
+          <p>smoking not allowed</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div>
+          <i class="fa-solid fa-chess-bishop me-3"></i>
+        </div>
+        <div>
+          <p>2/5 boards</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div style="width: 100%; height: 600px;" class="rounded-4 mt-1""
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+
   </div>
-  <div class="d-flex">
-    <i class="fa-solid fa-paw paw-icon"></i>
-    <p>pets allowed</p>
+
+  <div class="bk-nw-bx" style="background-color: rgb(226 225 225); position:fixed; bottom: 0; width: 100%;">
+    <button class="btn btn-block btn-lg" style="position:absolute; background-color: #61D8EF; border-radius: 35px;">Book Now</button>
   </div>
+
 </div>
