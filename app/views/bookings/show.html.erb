@@ -1,0 +1,58 @@
+<div class="banner" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);">
+  <div style="position: absolute; left: 12px; top: 40px;">
+  <%= link_to "<", dashboard_path, class:"btn-back"%>
+  </div>
+  <div class="container">
+    <h1>Your ride to <%= @ride.beach.name %></h1>
+  </div>
+</div>
+<div class="container mt-3">
+  <h2>Booking details</h2>
+</div>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div class="card-location-infos mx-3 mt-3">
+      <div class="d-flex">
+      <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+        <div>
+          <p><%= @ride.pick_up_location %></p>
+          <div style="font-size: 13px; margin-top: -15px;"><p>Lisboa</p></div>
+        </div>
+      </div>
+      <div class="d-flex">
+      <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+        <div>
+          <p><%= @ride.beach.address %></p>
+          <div style="font-size: 13px; margin-top: -15px;"><p>Sintra</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr style="border-width: 8px; border-color:#a9a6a6;">
+<div class="container">
+  <p> Date: <strong><%= @ride.date_time.strftime("%B")%> <%= @ride.date_time.day %>th, <%= @ride.date_time.year %></strong></p>
+  <p> Hour: <%= @ride.date_time.strftime("%H:%M")%></p>
+</div>
+<hr style="border-width: 8px; border-color:#a9a6a6;">
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h3 style="margin-bottom: 0;">Total:</h3>
+    </div>
+    <div>
+      <div style="background-color: #61D8EF; border-radius: 35px; padding: 5px 10px;">
+        <div>€ <%= @booking.price %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr style="border-width: 8px; border-color:#a9a6a6;">
+<div class="container mt-3">
+  <h2>Cancellation Policy</h2>
+  <p><strong>Free cancellation until <%= @ride.date_time.strftime("%B") %> <%= @ride.date_time.day - 1 %>th</strong> Non-refundable for later cancellations.</p>
+</div>
+<hr style="border-width: 8px; border-color:#a9a6a6;">
+<div class="container mt-3">
+  <p><em>Visit <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">TagAlong Booking & Refund Policies</a>, for more information about our cancellation policy. Please TagAlong reserves the right to charge you for any damages you are responsible for.</em></p>
+</div>
