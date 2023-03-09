@@ -1,0 +1,80 @@
+.location-card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 300px;
+  width: 250px;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.location-card .absolute{
+  position: absolute;
+}
+
+.location-card .name{
+  font-size: 35px;
+  bottom: 20px;
+  left: 15px;
+}
+
+.location-card .beach-name{
+  bottom: 55px;
+  left: 15px;
+  font-size: 35px
+}
+
+.location-card .beach-location{
+  bottom: 35px;
+  left: 15px;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.location-card .rides-tag{
+  background-color: rgba(97, 216, 239, 0.7);
+  font-size: 12px;
+  top: 30px;
+  right: 0;
+  padding: 5px 15px;
+  border-radius: 15px 0 0 15px;
+}
+
+.location-card .zero-bottom{
+  margin-bottom: 0px;
+}
+
+.location-card .condition-container{
+  border-radius: 50%;
+  font-size: 16px;
+  height: 25px;
+  width: 25px;
+}
+
+.location-card .condition-position{
+  bottom: 30px;
+  right: 15px;
+}
+
+.location-card .green{
+  background-color: green;
+}
+.location-card .orange{
+  background-color: orange;
+}
+.location-card .red{
+  background-color: red;
+}
+
+.location-card .center{
+  display: flex;
+  justify-content: center;
+}

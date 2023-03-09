@@ -10,7 +10,11 @@
 
       <div class="d-flex justify-content-between">
         <div class="d-flex">
-          <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" style="border-radius: 50%; height: 24px; width: 24px;" />
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag ride.user.photo.key, style: "border-radius: 50%; height: 24px; width: 24px;" %>
+          <% else %>
+            <%= image_tag "user.png",style: "border-radius: 50%; height: 24px; width: 24px;" %>
+          <% end %>
           <h4 style="font-size: 16px;">Driver: Gabriel</h4>
         </div>
         <div class="icon-rating-ride">

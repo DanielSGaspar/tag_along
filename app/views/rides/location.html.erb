@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708bc0/5842041f4e65fad6a7708bc0_1500.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @location.photo.key %>');">
   <div class="btn btn-light rounded-circle ml-3 mx-2" style="height: 60px; width: 60px;">
     <div>
       <div class="align-middle">
@@ -14,7 +14,7 @@
       <% @rides.each do |ride|%>
         <div class="card-location mb-3">
           <div class="d-flex">
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.saltywaytravel.com/wp-content/uploads/2015/12/10_PraiaPequena_WEB.jpg);" class="img-ride-card">
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @beach.photo.key %>');" class="img-ride-card">
                 <div class="btn-seats-ride d-flex">
                     <i class="fa-solid fa-user icon-seats-ride"></i>
                     <div><%=ride.seats%>/5</div>
@@ -24,7 +24,11 @@
 
               <div class="d-flex justify-content-between">
                 <div class="d-flex">
-                  <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" style="border-radius: 50%; height: 24px; width: 24px;" />
+                  <% if current_user.photo.attached? %>
+                    <%= cl_image_tag ride.user.photo.key, style: "border-radius: 50%; height: 24px; width: 24px;" %>
+                  <% else %>
+                    <%= image_tag "user.png",style: "border-radius: 50%; height: 24px; width: 24px;" %>
+                  <% end %>
                   <h4 style="font-size: 16px;">Driver: Gabriel</h4>
                 </div>
                 <div class="icon-rating-ride">

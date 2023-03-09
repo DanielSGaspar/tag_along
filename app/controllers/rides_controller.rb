@@ -1,7 +1,7 @@
 class RidesController < ApplicationController
 
   def index
-
+    # activate when location and map is active
     # @rides = Ride.where(location: params[:search][:location])
     # @rides = Ride.where(location: params[:search][:pick_up_location])
     @rides = Ride.all
@@ -15,12 +15,13 @@ class RidesController < ApplicationController
 
   def location
     @location = Location.find(params[:id])
-    beaches = Beach.where(location: @location)
-    @rides = []
+    @rides = @location.rides
+    # beaches = Beach.where(location: @location)
+    # @rides = []
 
-    beaches.each do |beach|
-      @rides += beach.rides if beach.rides
-    end
+    # beaches.each do |beach|
+    #   @rides += beach.rides if beach.rides
+    # end
   end
 
   def new
