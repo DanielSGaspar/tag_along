@@ -10,6 +10,9 @@ application.register("dropdown-mobile", DropdownMobileController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MapController from "./map_controller"
+application.register("map", MapController)
+
 import ScrollIntoController from "./scroll_into_controller"
 application.register("scroll-into", ScrollIntoController)
 

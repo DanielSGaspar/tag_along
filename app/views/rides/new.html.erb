@@ -7,7 +7,7 @@
   <%= simple_form_for [@ride] do |f|%>
     <%= f.association :beach, collection: Beach.order('name ASC')%>
     <%= f.input :date_time, as: :datetime%>
-    <%= f.input :pick_up_location%>
+    <%= f.input :address%>
     <%= f.input :seats%>
     <%= f.input :price%>
     <%= f.submit%>

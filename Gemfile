@@ -79,3 +79,6 @@ end
 
 # Cloudinary image upload
 gem "cloudinary"
+
+# Geoocoding and maps
+gem "geocoder"
