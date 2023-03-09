@@ -4,7 +4,7 @@
 
 .show_rides .title {
   color: rgb(12, 12, 12);
-  padding: 24px 24px 32px;
+  padding: 24px 24px 15px;
 }
 
 .driver-sesh {
@@ -19,6 +19,7 @@
   width: 100px;
   object-fit: cover;
   border-radius: 70px;
+  margin-left: 8px;
 }
 
 .driver-sesh h2 {
@@ -30,7 +31,7 @@
 .driver-sesh p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: .8;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -43,4 +44,16 @@
   font-size: 23px;
   padding: 9px;
   margin-top: -8px;
+  margin-left: 8px;
+}
+
+.permission-ride {
+  opacity: .8;
+}
+
+.bk-nw-bx {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
 }
