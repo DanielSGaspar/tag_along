@@ -59,9 +59,10 @@
     </div>
 
     <h1 class="mt-4">Bookings</h1>
-
-    <%= render "booking_card" %>
-    <%= render "booking_card" %>
-
+    <div>
+      <% @bookings.each do |booking| %>
+        <%= render "booking_card", booking: booking %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/beach/:id', to: 'rides#beach', as: "beach"
   get '/location/:id', to: 'rides#location', as: "location"
   get '/dashboard', to: 'pages#dashboard'
+  get '/bookings/:id/confirmation', to: 'bookings#booking_confirmation', as: "confirmation"
 
 end
