@@ -236,7 +236,7 @@ price = [20, 10, 15]
 seats = 5
 address = ["Cascais", "Carcavelos", "Campo Grande", "Arroios", "Cais do Sodré"]
 
-5.times do
+30.times do
   puts "Creating ride"
   ride = Ride.create(
     user: user.sample,
