@@ -12,10 +12,16 @@
   width: 40px;
 }
 
-.logo {
+.logo-big {
   width: 40px;
   border-radius: 50%;
 }
+
+.logo-small{
+  width: 40px;
+  border-radius: 50%;
+}
+
 .navbar-brand {
   display: flex;
 }
@@ -51,12 +57,36 @@
 .username {
   padding-left: 15px;
   font-weight: bold;
-  color: #6C757D;
+  a {
+    color: #6C757D;
+    text-decoration: none;
+  }
+}
+
+.brand {
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  margin-left: 5px;
+}
+
+// Large screens
+@media (min-width: 576px) and (max-width: 10000px) {
+  .brand {
+    display: none;
+  }
+  .logo-small {
+    display: none;
+  }
 }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .username {
     padding-left: 1px;
+  }
+  .nav-link {
+    display: none;
+  }
+  .logo-big {
+    display: none;
   }
 }
