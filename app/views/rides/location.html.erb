@@ -14,7 +14,7 @@
       <% @rides.each do |ride|%>
         <div class="card-location mb-3">
           <div class="d-flex">
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @beach.photo.key %>');" class="img-ride-card">
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path ride.beach.photo.key %>');" class="img-ride-card">
                 <div class="btn-seats-ride d-flex">
                     <i class="fa-solid fa-user icon-seats-ride"></i>
                     <div><%=ride.seats%>/5</div>
