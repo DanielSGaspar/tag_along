@@ -1,21 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="top">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", class: "logo" %>
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <p class="nav-link"><span data-controller="typed-js"></span></p>
-        </li>
-      </ul>
-    <% end %>
-
+    <%= link_to dashboard_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png", class: "logo-big" %>
+      <%= image_tag "logo.png", class: "logo-small" %>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <p class="brand">Tag Along</p>
+            <p class="nav-link"><span data-controller="typed-js"></span></p>
+          </li>
+        </ul>
+      <% end %>
     <div data-controller="dropdown-mobile">
       <button class="navbar-toggler" type="button" data-action="click->dropdown-mobile#toggle">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div data-dropdown-mobile-target="items" class="d-none mobile-pop">
         <% if user_signed_in? %>
-          <small class="username">username</small>
+          <div class="username"><%= link_to current_user.full_name, dashboard_path%></div>
           <%= link_to "Messages", "#", class: "dropdown-item" %>
           <%= link_to "Create new ride", new_ride_path, class: "dropdown-item" %>
           <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
@@ -36,7 +37,7 @@
               <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <small class="username">username</small>
+              <div class="username"><%= link_to current_user.full_name, dashboard_path%></div>
               <%= link_to "Messages", "#", class: "dropdown-item" %>
               <%= link_to "Create new ride", new_ride_path, class: "dropdown-item" %>
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>

@@ -8,14 +8,17 @@
 
 require "open-uri"
 
+
+
 puts("Cleaning database")
 Booking.destroy_all
 Ride.destroy_all
 Location.destroy_all
 Beach.destroy_all
+User.destroy_all
 
 
-puts("Creating locations")
+puts("Creating Cascais")
 cascais = Location.new(
   name: "Cascais",
   description: "Amazing location with sick waves!"
@@ -24,6 +27,7 @@ file = URI.open("https://images.unsplash.com/photo-1615672337780-6e19a28a5b39?ix
 cascais.photo.attach(io: file, filename: "cascais.png", content_type: "image/png")
 cascais.save
 
+puts("Creating Costa")
 costa = Location.new(
   name: "Costa da Caparica",
   description: "Perfect waves with beautiful view."
@@ -32,6 +36,7 @@ file = URI.open("https://images.unsplash.com/photo-1642675468641-0de6e989334e?ix
 costa.photo.attach(io: file, filename: "costa.png", content_type: "image/png")
 costa.save
 
+puts("Creating Sintra")
 sintra = Location.new(
   name: "Sintra",
   description: "A rustic place in tune with the local surf."
@@ -40,6 +45,7 @@ file = URI.open("https://images.unsplash.com/photo-1565865735988-fd5752a02846?ix
 sintra.photo.attach(io: file, filename: "sintra.png", content_type: "image/png")
 sintra.save
 
+puts("Creating Ericeira")
 ericeira = Location.new(
   name: "Ericeira",
   description: "Beaches surrounded by high cliffs of rocky coast with a small harbor for fishermen."
@@ -49,6 +55,7 @@ ericeira.photo.attach(io: file, filename: "ericeira.png", content_type: "image/p
 ericeira.save
 
 puts("Creating beaches")
+puts("Creating Carcavelos")
 #Cascais Beaches
 carcavelos = Beach.new(
   name: "Carcavelos",
@@ -59,6 +66,7 @@ file = URI.open("https://images.unsplash.com/photo-1575478844777-d8361533206b?ix
 carcavelos.photo.attach(io: file, filename: "carcavelos.png", content_type: "image/png")
 carcavelos.save
 
+puts("Creating Sao Pedro")
 sao_pedro = Beach.new(
   name: "São Pedro do Estoril",
   address: "Praia de São Pedro do Estoril, Cascais",
@@ -68,6 +76,7 @@ file = URI.open("https://images.unsplash.com/photo-1540457775988-f46bab98bbb6?ix
 sao_pedro.photo.attach(io: file, filename: "sao_pedro.png", content_type: "image/png")
 sao_pedro.save
 
+puts("Creating Guincho")
 guincho = Beach.new(
   name: "Guincho",
   address: "Praia do Guincho, Cascais",
@@ -78,6 +87,7 @@ guincho.photo.attach(io: file, filename: "guincho.png", content_type: "image/png
 guincho.save
 
 #Costa da Caparica Beaches
+puts("Creating Sao Joao")
 sao_joao = Beach.new(
   name: "São João da Caparica",
   address: "Praia de São João da Caparica, Costa da Caparica",
@@ -87,6 +97,7 @@ file = URI.open("https://images.unsplash.com/photo-1506797220058-533e019ac7fa?ix
 sao_joao.photo.attach(io: file, filename: "sao_joao.png", content_type: "image/png")
 sao_joao.save
 
+puts("Creating Fonte da Telha")
 fonte_da_telha = Beach.new(
   name: "Fonte da Telha",
   address: "Praia da Fonte da Telha, Costa da Caparica",
@@ -97,6 +108,7 @@ fonte_da_telha.photo.attach(io: file, filename: "fonte_da_telha.png", content_ty
 fonte_da_telha.save
 
 #Sintra Beaches
+puts("Creating Adraga")
 adraga = Beach.new(
   name: "Adraga",
   address: "Praia da Adraga, Sintra",
@@ -106,6 +118,7 @@ file = URI.open("https://images.unsplash.com/photo-1647607219465-7159c8749831?ix
 adraga.photo.attach(io: file, filename: "adraga.png", content_type: "image/png")
 adraga.save
 
+puts("Creating Praia Grande")
 praia_grande = Beach.new(
   name: "Praia Grande",
   address: "Praia Grande, Sintra",
@@ -115,6 +128,7 @@ file = URI.open("https://images.unsplash.com/photo-1591549590250-10ab146d80d7?ix
 praia_grande.photo.attach(io: file, filename: "praia_grande.png", content_type: "image/png")
 praia_grande.save
 
+puts("Creating Praia das Maçãs")
 praia_das_macas = Beach.new(
   name: "Praia das Maçãs",
   address: "Praia das Maçãs, Sintra",
@@ -125,6 +139,7 @@ praia_das_macas.photo.attach(io: file, filename: "praia_das_macas.png", content_
 praia_das_macas.save
 
 #Mafra Beaches
+puts("Creating Sao Juliao")
 sao_juliao = Beach.new(
   name: "São Julião",
   address: "Praia de São Julião, Ericeira",
@@ -134,6 +149,7 @@ file = URI.open("https://images.unsplash.com/photo-1519907362090-ac2b395e476b?ix
 sao_juliao.photo.attach(io: file, filename: "sao_juliao.png", content_type: "image/png")
 sao_juliao.save
 
+puts("Creating Foz do Lizandro")
 foz_do_lizandro = Beach.new(
   name: "Foz do Lizandro",
   address: "Praia da Foz do Lizandro, Ericeira",
@@ -143,6 +159,7 @@ file = URI.open("https://images.unsplash.com/photo-1599407158811-fb0f3a254f21?ix
 foz_do_lizandro.photo.attach(io: file, filename: "foz_do_lizandro.png", content_type: "image/png")
 foz_do_lizandro.save
 
+puts("Creating Ribeira")
 ribeira_dilhas = Beach.new(
   name: "Ribeira D'Ilhas",
   address: "Praia da Ribeira D'Ilhas, Ericeira",
@@ -151,5 +168,84 @@ ribeira_dilhas = Beach.new(
 file = URI.open("https://cdn.travel-in-portugal.com/sites/default/files/styles/x_large/public/beaches/ribeira-dilhas-ericeira.jpg")
 ribeira_dilhas.photo.attach(io: file, filename: "ribeira_dilhas.png", content_type: "image/png")
 ribeira_dilhas.save
+
+
+#Users
+password = "111111"
+
+puts("Creating user 1")
+user_1 = User.new(
+  password: password,
+  email: "kelly@gmail.com",
+  first_name: "Kelly",
+  last_name: "Slater"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/536c48fbf12a1702fd3cda434c915dfb.png?&x=96&y=96&icq=74&sig=5b14c630d1eeef1c82563ed19f32d12e")
+user_1.photo.attach(io: file, filename: "user_1.png", content_type: "image/png")
+user_1.save
+
+puts("Creating user 2")
+user_2 = User.new(
+  password: password,
+  email: "gabriel@gmail.com",
+first_name: "Gabriel",
+last_name: "Medina"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/8a17743f5828d7d0834cb66e71cfe145.png?&x=96&y=96&icq=74&sig=54e7617fff2a0ce6786a0798db769d74")
+user_2.photo.attach(io: file, filename: "user_2.png", content_type: "image/png")
+user_2.save
+
+puts("Creating user 3")
+user_3 = User.new(
+  password: password,
+  email: "beth@gmail.com",
+  first_name: "Bethany",
+  last_name: "Hamilton"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/46a464854286e9bba3cfa665a73a41f8.png?&x=96&y=96&icq=74&sig=bee937104bcdc99eb8aeb106cbf6f05b")
+user_3.photo.attach(io: file, filename: "user_3.png", content_type: "image/png")
+user_3.save
+
+puts("Creating user 4")
+user_4 = User.new(
+  password: password,
+  email: "kelia@gmail.com",
+  first_name: "Kelia",
+  last_name: "Moniz"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/73a427859cbb85f84c6bddc48c4ab1f5.png?&x=96&y=96&icq=74&sig=e15b64b65114e17775a33dcf9e04870d")
+user_4.photo.attach(io: file, filename: "user_4.png", content_type: "image/png")
+user_4.save
+
+puts("Creating user 5")
+user_5 = User.new(
+  password: password,
+  email: "mason@gmail.com",
+  first_name: "Mason",
+  last_name: "Ho"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/3acda4136d26a62dcb63704d235123bd.png?&x=96&y=96&icq=74&sig=c150c8d8a132514939a9c3a9131a3f84")
+user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")
+user_5.save
+
+#Rides
+
+user = [user_1, user_2, user_3, user_4, user_5]
+date_time = [DateTime.parse("12/03/2023 10:00"),DateTime.parse("12/03/2023 15:00"), DateTime.parse("15/03/2023 08:00"), DateTime.parse("11/03/2023 12:00"),DateTime.parse("13/03/2023 17:00")]
+price = [20, 10, 15]
+seats = 5
+address = ["Cascais", "Carcavelos", "Campo Grande", "Arroios", "Cais do Sodré"]
+
+5.times do
+  puts "Creating ride"
+  ride = Ride.create(
+    user: user.sample,
+    date_time: date_time.sample,
+    price: price.sample,
+    seats: seats,
+    beach: Beach.all.sample,
+    address: address.sample
+  )
+end
 
 puts("Created seeds")
