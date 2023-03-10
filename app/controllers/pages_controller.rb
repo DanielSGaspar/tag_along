@@ -16,5 +16,6 @@ class PagesController < ApplicationController
     @popular = [carcavelos, sao_juliao, praia_grande, foz_do_lizandro]
     @favorites = [guincho, praia_grande, adraga]
     @locations = Location.all
+    @bookings = Booking.all
   end
 end

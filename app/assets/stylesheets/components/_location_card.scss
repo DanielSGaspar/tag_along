@@ -78,3 +78,20 @@
   display: flex;
   justify-content: center;
 }
+
+.booking-card{
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 14px rgba(36, 116, 132, 0.5);
+  color: black;
+  h1{
+    color: white;
+    font-size: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+.no-text-decoration{
+  text-decoration: none;
+}

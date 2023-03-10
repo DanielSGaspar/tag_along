@@ -15,6 +15,34 @@
   background-color: #2AC7E5;
 }
 
+.btn-blue {
+  background-color: #61d8ef;
+	padding: 7px 20px;
+  border-radius: 25px;
+	color: white;
+  vertical-align: top;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  height: 50px;
+  text-decoration: none;
+}
+
+
+.btn-blue:hover {
+  background-color: #2AC7E5;
+}
+
+.btn-back{
+  background-color: #61d7efac;
+  border-radius: 50%;
+  padding: 14px 18px;
+  color: white;
+  vertical-align: top;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
 .btn-nav {
   background-color: #61D8EF;
 	padding: 7px 20px;
