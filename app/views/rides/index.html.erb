@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1565865735988-fd5752a02846?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
-  <div class="btn btn-light rounded-circle ml-3 mx-2" style="height: 60px; width: 60px;">
+  <div class="btn btn-light rounded-circle ml-3 mx-2" style="height: 60px; width: 60px; margin-top: -65px;">
     <div>
       <div class="align-middle">
         <h1 style="color: #61D8EF;" class="align-middle"><i class="fa-solid fa-arrow-left"></i></h1>
@@ -9,46 +9,10 @@
 </div>
 
 <div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0;">
-  <div class="container">
+  <div class="container-rides-index-card mx-3">
     <div><h1 class="text-center">Rides to Sintra</h1></div>
-      <% @rides.each do |ride|%>
-        <div class="card-location mb-3">
-          <div class="d-flex">
-            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.saltywaytravel.com/wp-content/uploads/2015/12/10_PraiaPequena_WEB.jpg);" class="img-ride-card">
-                <div class="btn-seats-ride d-flex">
-                    <i class="fa-solid fa-user icon-seats-ride"></i>
-                    <div><%=ride.seats%>/5</div>
-                </div>
-            </div>
-            <div style="width: 50%;" class="mt-3">
-
-              <div class="d-flex justify-content-between">
-                <div class="d-flex">
-                  <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" style="border-radius: 50%; height: 24px; width: 24px;" />
-                  <h4 style="font-size: 16px;">Driver: Gabriel</h4>
-                </div>
-                <div class="icon-rating-ride">
-                  <div class="me-5 mx-1" style="position: absolute;"><i class="fa-solid fa-star"></i></div>
-                </div>
-              </div>
-              <div class="d-flex mx-4">
-                <p class="me-5 card-date"><i class="fa-solid fa-clock"></i> 10am</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="card-location-infos">
-                  <p><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i> Arroios</p>
-                  <p style="position: absolute; bottom: 22px; right: 197px;">|</p>
-                  <p><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;" ></i> Praia Grande</p>
-                </div>
-                <div style="position: relative; bottom: -45px;">
-                  <div style="background-color: #61D8EF; border-radius: 35px; height: 25px; width: 40px;">
-                    <div class="me-5 mx-1" style="position: absolute;">€<%=ride.price%></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <%end%>
+    <% @rides.each do |ride|%>
+    <%= render "ride_card", ride: ride %>
+    <%end%>
   </div>
 </div>

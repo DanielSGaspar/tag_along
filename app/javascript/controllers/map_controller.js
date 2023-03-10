@@ -18,6 +18,7 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.map.addControl(new mapboxgl.NavigationControl())
   }
 
   #addMarkersToMap() {
