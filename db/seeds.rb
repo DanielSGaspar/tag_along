@@ -9,8 +9,11 @@
 require "open-uri"
 
 puts("Cleaning database")
+Booking.destroy_all
+Ride.destroy_all
 Location.destroy_all
 Beach.destroy_all
+
 
 puts("Creating locations")
 cascais = Location.new(
