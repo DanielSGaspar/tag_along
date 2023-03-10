@@ -10,7 +10,7 @@
     <div class="card-location-infos mx-3 mt-4">
       <div class="d-flex">
         <div>
-          <p><strong>00:15h</strong></p>
+          <p><strong><%= @ride.date_time.strftime("%H:%M") %></strong></p>
         </div>
         <div>
           <p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p>
@@ -22,7 +22,7 @@
       </div>
       <div class="d-flex">
         <div>
-          <p><strong>04:25h</strong></p>
+          <p><strong><%= @ride.date_time.hour + 1%>:<%= @ride.date_time.strftime("%M")%></strong></p>
         </div>
       <div><p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
         <div>
@@ -41,9 +41,9 @@
     <div>
       <p>Price per seat:</p>
     </div>
-    <div style="position: relative;">
-      <div style="background-color: #61D8EF; border-radius: 35px; height: 26px; width: 55px;">
-        <div style="position: absolute; right: 3px;">€10,00</div>
+    <div>
+      <div style="background-color: #61D8EF; border-radius: 35px; padding: 3px 10px;" class="d-flex justify-content-center">
+        <div>€ <%= @ride.price %></div>
       </div>
     </div>
   </div>
@@ -53,10 +53,17 @@
   </div>
 
   <div>
+    <div class="ride-details">
+      <h2>Driver</h2>
+    </div>
     <div class="driver-sesh">
-      <img src="https://www.ripcurl.eu/Content-Library/images/Team/Gabriel-Medina.jpg" />
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag @ride.user.photo.key %>
+      <% else %>
+        <%= image_tag "user.png" %>
+      <% end %>
       <div class="driver-sesh-infos" style="position: relative">
-        <h2>Driver name</h2>
+        <h2><%= current_user.first_name  %></h2>
         <p>Hello, my name is "Driver name". Born and raised in Portugal and passionate about the waves of our coast.</p>
         <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
       </div>
@@ -69,7 +76,7 @@
 
   <div>
     <div class="ride-details">
-      <h2>Ride Details:</h2>
+      <h2>Ride Details</h2>
     </div>
     <div class="mx-3 permission-ride">
       <div class="d-flex">
