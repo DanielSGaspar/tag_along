@@ -1,7 +1,7 @@
 <%= link_to beach_path(beach) do %>
   <div class="location-card me-3" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('<%= cl_image_path beach.photo.key %>')">
     <h1 class="absolute beach-name"><%= beach.name %></h1>
-    <div class="d-flex absolute rides-tag"><p class="zero-bottom">Rides: <%= beach.rides.count %></p></div>
+    <div class="d-flex absolute rides-tag"><p class="zero-bottom">Rides: <%= beach.rides.on_date(@date).count %></p></div>
     <h3 class="absolute beach-location"><i class="fa-solid fa-location-dot"></i> <%= beach.location.name %></h3>
     <div class="d-flex absolute condition-position">
       <div class="me-2 condition-container red">

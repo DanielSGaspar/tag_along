@@ -43,6 +43,14 @@
   text-decoration: none;
 }
 
+.btn-heart {
+  background-color: #61d7efac;
+  border-radius: 50%;
+  padding: 18px 15px;
+  color: #ffffffe8;
+  opacity: .9;
+}
+
 .btn-nav {
   background-color: #61D8EF;
 	padding: 7px 20px;
@@ -86,6 +94,10 @@
   color: #474c50;
 }
 
+.btn-book {
+  box-shadow: 0px 0px 5px grey;
+  background-color: green;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .btn-search {

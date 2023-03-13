@@ -1,6 +1,4 @@
 class Ride < ApplicationRecord
-  include PgSearch::Model
-  # pg_search_scope :search_landing_page, against: [:address, :beach_location, :date_time, :seats]
 
   belongs_to :user
   belongs_to :beach
@@ -15,4 +13,8 @@ class Ride < ApplicationRecord
   # def location
   #   beach.location
   # end
+
+  scope :today, -> { where(date_time: Date.current.all_day) } # Ride.today
+  scope :on_date, ->(date) { where(date_time: Date.parse(date).all_day) }
+
 end
