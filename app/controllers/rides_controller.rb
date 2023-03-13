@@ -9,19 +9,15 @@ class RidesController < ApplicationController
   end
 
   def beach
+    @date = params[:date]
     @beach = Beach.find(params[:id])
-    @rides = Ride.where(beach: @beach)
+    @rides = Ride.where(beach: @beach).on_date(@date)
   end
 
   def location
+    @date = params[:date]
     @location = Location.find(params[:id])
-    @rides = @location.rides
-    # beaches = Beach.where(location: @location)
-    # @rides = []
-
-    # beaches.each do |beach|
-    #   @rides += beach.rides if beach.rides
-    # end
+    @rides = @location.rides.on_date(@date)
   end
 
   def new
