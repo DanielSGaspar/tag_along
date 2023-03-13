@@ -7,11 +7,9 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
 
-    if params[:date].present?
-      @rides = Ride.on_date(params[:date])
-    else
-      @rides = Ride.today
-    end
+    @date = params[:date] || Date.today.strftime("%Y-%m-%d")
+
+    @rides = Ride.on_date(@date)
 
     # Popular Beaches
     @popular = []
