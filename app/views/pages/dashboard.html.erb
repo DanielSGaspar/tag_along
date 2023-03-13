@@ -9,7 +9,7 @@ data-dashboard-date-locations-value="<%=@locations.to_json%>"
     <div class="d-flex justify-content-center">
       <i class="fa-solid fa-magnifying-glass me-2"></i>
       <form action="/dashboard" method="get" data-dashboard-date-target="form">
-        <input type="date" name="date" class="mb-2" style="border: none; background-color: transparent;" label=f data-dashboard-date-target="date" value="<%= params[:date] %>">
+        <input type="date" name="date" class="mb-2" style="border: none; background-color: transparent;" data-dashboard-date-target="date" value="<%= @date %>">
       </form>
       <%# <p style="margin-bottom: 0;">When do you want to surf?</p> %>
     </div>
@@ -37,7 +37,7 @@ data-dashboard-date-locations-value="<%=@locations.to_json%>"
         <div>
           <div class="d-flex">
             <% @popular.each do |beach| %>
-              <%= render "beach_card", beach: beach, date: params[:date] %>
+              <%= render "beach_card", beach: beach, date: @date %>
             <% end %>
           </div>
         </div>
