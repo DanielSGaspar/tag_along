@@ -5,3 +5,9 @@
   box-shadow: none;
   background-color: transparent;
 }
+
+.map-search {
+  .mapboxgl-ctrl-geocoder input{
+    color: black;
+  }
+}

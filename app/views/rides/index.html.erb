@@ -4,9 +4,16 @@
 
 <div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0;">
   <div class="container-rides-index-card mx-3">
-    <div><h1 class="text-center">Rides to Sintra</h1></div>
+    <% if @rides.empty? %>
+      <div class="no-results">
+        <h1 class="pb-5">No results found..</h1>
+        <%= link_to "Try again", root_path, class:"btn-blue" %>
+      </div>
+    <% else %>
+      <h1 class="text-center py-2">Searchresults</h1>
     <% @rides.each do |ride|%>
-    <%= render "ride_card", ride: ride %>
-    <%end%>
+      <%= render "ride_card", ride: ride %>
+      <%end%>
+    <% end %>
   </div>
 </div>
