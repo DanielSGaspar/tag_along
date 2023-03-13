@@ -57,14 +57,14 @@
       <h2>Driver</h2>
     </div>
     <div class="driver-sesh">
-      <% if current_user.photo.attached? %>
+      <% if @ride.user.photo.attached? %>
         <%= cl_image_tag @ride.user.photo.key %>
       <% else %>
         <%= image_tag "user.png" %>
       <% end %>
       <div class="driver-sesh-infos" style="position: relative">
-        <h2><%= current_user.first_name  %></h2>
-        <p>Hello, my name is "Driver name". Born and raised in Portugal and passionate about the waves of our coast.</p>
+        <h2><%= @ride.user.first_name %></h2>
+        <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
         <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
       </div>
     </div>
