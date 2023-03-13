@@ -1,10 +1,4 @@
-<div
-class="dashboard"
-data-controller="dashboard-date"
-data-dashboard-date-popular-value="<%=@popular.to_json%>"
-data-dashboard-date-favorites-value="<%=@favorites.to_json%>"
-data-dashboard-date-locations-value="<%=@locations.to_json%>"
->
+<div class="dashboard" data-controller="dashboard-date">
   <div class="mt-5">
     <div class="d-flex justify-content-center">
       <i class="fa-solid fa-magnifying-glass me-2"></i>
@@ -34,7 +28,7 @@ data-dashboard-date-locations-value="<%=@locations.to_json%>"
     </ul>
     <div class="tab-content mt-3" id="myTabContent">
       <div class="scroll tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab">
-        <div>
+        <div data-dashboard-date-target="addUrl" data-url="/next_page?date=<%= @date %>">
           <div class="d-flex">
             <% @popular.each do |beach| %>
               <%= render "beach_card", beach: beach, date: @date %>
@@ -44,7 +38,7 @@ data-dashboard-date-locations-value="<%=@locations.to_json%>"
       </div>
       <div class="scroll tab-pane fade" id="favourites" role="tabpanel" aria-labelledby="favourites-tab">
 
-        <div>
+        <div data-dashboard-date-target="addUrl">
           <div class="d-flex" style="white-space: nowrap;">
             <% @favorites.each do |beach| %>
               <%= render "beach_card", beach: beach %>
@@ -54,7 +48,7 @@ data-dashboard-date-locations-value="<%=@locations.to_json%>"
 
       </div>
       <div class="scroll tab-pane fade" id="locations" role="tabpanel" aria-labelledby="locations-tab">
-        <div>
+        <div data-dashboard-date-target="addUrl">
           <div class="d-flex">
             <% @locations.each do |location| %>
               <%= render "location_card", location: location %>

@@ -27,16 +27,10 @@ class PagesController < ApplicationController
     @locations = @locations.uniq
     @locations = @locations.sort_by { |beach| beach.rides.size }.reverse!.first(5)
 
-
-
-    carcavelos = Beach.find_by(name: "Carcavelos")
-    sao_juliao = Beach.find_by(name: "São Julião")
-    praia_grande = Beach.find_by(name: "Praia Grande")
-    foz_do_lizandro = Beach.find_by(name: "Foz do Lizandro")
-    guincho = Beach.find_by(name: "Guincho")
-    adraga = Beach.find_by(name: "Adraga")
+    # Favorites
     @favorites = @user.all_favorites.map(&:beach)
-    @bookings = Booking.all
+    @bookings = Booking.where(user: @user)
+
   end
 
 end
