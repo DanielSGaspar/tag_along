@@ -53,6 +53,17 @@ class RidesController < ApplicationController
     }]
   end
 
+  def edit
+    @ride = Ride.find(params[:id])
+  end
+
+  def update
+    @ride = Ride.find(params[:id])
+    @ride.update(ride_params)
+
+    redirect_to ride_path(@ride)
+  end
+
   private
 
   def ride_params
