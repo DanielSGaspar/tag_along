@@ -82,3 +82,6 @@ gem "cloudinary"
 
 # Geoocoding and maps
 gem "geocoder"
+
+# adding favorites
+gem "acts_as_favoritor"

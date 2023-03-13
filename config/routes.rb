@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   get '/bookings/:id/confirmation', to: 'bookings#booking_confirmation', as: "confirmation"
 
+  resources :beaches, only: [] do
+    member do
+      post :favorite
+    end
+  end
 end
