@@ -14,8 +14,9 @@ class PagesController < ApplicationController
     guincho = Beach.find_by(name: "Guincho")
     adraga = Beach.find_by(name: "Adraga")
     @popular = [carcavelos, sao_juliao, praia_grande, foz_do_lizandro]
-    @favorites = [guincho, praia_grande, adraga]
+    @favorites = @user.all_favorites.map(&:beach)
     @locations = Location.all
     @bookings = Booking.all
   end
+
 end

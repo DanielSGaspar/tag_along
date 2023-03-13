@@ -105,8 +105,8 @@
       </div>
     </div>
 
-    <div class="container" style="margin-bottom: 6rem">
-      <div style="width: 100%; height: 600px;" class="rounded-4 mt-1""
+    <div class="container">
+      <div style="width: 100%; height: 500px;" class="rounded-4 mt-1""
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -116,8 +116,8 @@
   </div>
 
 
-  <div class="bk-nw-bx" style="background-color: rgb(226 225 225); position:fixed; bottom: 0; width: 100%;">
-    <%= link_to "Book", new_ride_booking_path(@ride), class:"btn-blue" %>
+  <div class="bk-nw-bx" style="position:fixed; bottom: 0; width: 100%;">
+    <%= link_to "Book", new_ride_booking_path(@ride), class:"btn-blue btn-book" %>
   </div>
 
 </div>
