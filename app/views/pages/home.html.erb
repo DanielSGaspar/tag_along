@@ -2,12 +2,12 @@
   <div>
     <h3 class="home-header">Don't have a car? Not familiar with the nearby surfspots? No problem, TAG ALONG with surfers in your area!</h3>
   </div>
-    <div class="form">
+    <div class="form" data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
       <%= simple_form_for :search, url: rides_path, method: "GET", html: { class: 'form-inline d-flex' } do |f| %>
-      <%= f.input :pick_up_location, input_html: { value: params[:pick_up_location] }, label: false, class: "form-box", placeholder: "Pick up" %>
+      <%= f.input :address, as: :hidden, input_html: {data: {address_autocomplete_target: "address"}}, label: false %>
       <%= f.input :location, collection: Location::NAMES, label: false, prompt: "Drop off", class: "form-box" %>
       <div class="small-screen-inline">
-        <%= f.input :date_time, as: :date, html5: true, label: false %>
+        <%= f.input :date_time, as: :date, html5: true, label: false, wrapper_html: { class: "flex-grow-1" } %>
         <%= f.input :seats, collection: 1..5, label: false, prompt: "👤" %>
       </div>
       <%= f.submit "Search", class: "btn-search" %>
@@ -18,7 +18,8 @@
     </div>
 </div>
 <div class="about-container" id="info">
-  <div class="about-text py-5">
-    <p>About Tag Along: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <strong class="text-center text-white pt-4">About Tag Along</strong>
+  <div class="about-text py-3">
+    <p>Have you ever gone on a surf trip, only to arrive in the place and realize that the surf spots are way beyond walking distance from your hotel? Have you ever seen the swell of the season pass you by, while you are stuck at home without a ride? How about being new in town and have no one to surf with? Tag Along is the answer to all these concerns. Invented to connect surfers, improve wave accessibility and make surfing more sustainable by sharing rides. Surfers are social beings. Imagine catching the wave of your life, getting barrelled or having a gnarly wipeout if no one is there to see it. Tag Along allows surfers to catch a ride to the beach with other surfers, or to offer a ride. In the app you can navigate through the surf spots of your area and join</p>
   </div>
 </div>

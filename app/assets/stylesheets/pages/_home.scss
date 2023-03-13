@@ -40,11 +40,15 @@
 
 .about-container {
   background-color: #444444;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
   .home-header {
-    font-size: 15px;
+    font-size: 24px;
     padding: 0 20vw;
   }
   .logo-home {

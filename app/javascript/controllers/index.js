@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AddressAutocompleteController from "./address_autocomplete_controller"
+application.register("address-autocomplete", AddressAutocompleteController)
+
 import DashboardDateController from "./dashboard_date_controller"
 application.register("dashboard-date", DashboardDateController)
 

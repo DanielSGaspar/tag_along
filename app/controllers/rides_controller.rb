@@ -1,11 +1,14 @@
 class RidesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    # activate when location and map is active
-    # @rides = Ride.where(location: params[:search][:location])
-    # @rides = Ride.where(location: params[:search][:pick_up_location])
-    @rides = Ride.all
+    @search = params[:search]
 
+    if @search.nil?
+      @rides = Ride.all
+    else
+      @rides = RideSearch.new(params).search(Ride.all)
+    end
   end
 
   def beach
