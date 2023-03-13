@@ -11,7 +11,7 @@
 
             <div class="d-flex justify-content-between">
               <div class="d-flex">
-                <% if current_user.photo.attached? %>
+                <% if user_signed_in? && current_user.photo.attached? %>
                   <%= cl_image_tag ride.user.photo.key, style: "border-radius: 50%; height: 24px; width: 24px;" %>
                 <% else %>
                   <%= image_tag "user.png", style: "border-radius: 50%; height: 24px; width: 24px;" %>
