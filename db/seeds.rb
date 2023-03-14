@@ -178,7 +178,8 @@ user_1 = User.new(
   password: password,
   email: "kelly@gmail.com",
   first_name: "Kelly",
-  last_name: "Slater"
+  last_name: "Slater",
+  address: "R. Dom Pedro V 129, 1250-096 Lisboa"
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/536c48fbf12a1702fd3cda434c915dfb.png?&x=96&y=96&icq=74&sig=5b14c630d1eeef1c82563ed19f32d12e")
 user_1.photo.attach(io: file, filename: "user_1.png", content_type: "image/png")
@@ -188,8 +189,9 @@ puts("Creating user 2")
 user_2 = User.new(
   password: password,
   email: "gabriel@gmail.com",
-first_name: "Gabriel",
-last_name: "Medina"
+  first_name: "Gabriel",
+  last_name: "Medina",
+  address: "R. do Alecrim 47A, 1200-014 Lisboa"
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/8a17743f5828d7d0834cb66e71cfe145.png?&x=96&y=96&icq=74&sig=54e7617fff2a0ce6786a0798db769d74")
 user_2.photo.attach(io: file, filename: "user_2.png", content_type: "image/png")
@@ -200,7 +202,8 @@ user_3 = User.new(
   password: password,
   email: "beth@gmail.com",
   first_name: "Bethany",
-  last_name: "Hamilton"
+  last_name: "Hamilton",
+  address: "Escadinhas da Fonte da Pipa 2, 2710-557 Sintra"
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/46a464854286e9bba3cfa665a73a41f8.png?&x=96&y=96&icq=74&sig=bee937104bcdc99eb8aeb106cbf6f05b")
 user_3.photo.attach(io: file, filename: "user_3.png", content_type: "image/png")
@@ -211,7 +214,8 @@ user_4 = User.new(
   password: password,
   email: "kelia@gmail.com",
   first_name: "Kelia",
-  last_name: "Moniz"
+  last_name: "Moniz",
+  address: "Av. Alm. Reis 1 H, 1150-007 Lisboa"
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/73a427859cbb85f84c6bddc48c4ab1f5.png?&x=96&y=96&icq=74&sig=e15b64b65114e17775a33dcf9e04870d")
 user_4.photo.attach(io: file, filename: "user_4.png", content_type: "image/png")
@@ -222,7 +226,8 @@ user_5 = User.new(
   password: password,
   email: "mason@gmail.com",
   first_name: "Mason",
-  last_name: "Ho"
+  last_name: "Ho",
+  address: "R. de Santo António 34, 2655-312 Ericeira"
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/3acda4136d26a62dcb63704d235123bd.png?&x=96&y=96&icq=74&sig=c150c8d8a132514939a9c3a9131a3f84")
 user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")
@@ -234,7 +239,7 @@ user = [user_1, user_2, user_3, user_4, user_5]
 date_time = [DateTime.parse("12/03/2023 10:00"),DateTime.parse("12/03/2023 15:00"), DateTime.parse("15/03/2023 08:00"), DateTime.parse("11/03/2023 12:00"),DateTime.parse("13/03/2023 17:00")]
 price = [20, 10, 15]
 seats = 5
-address = ["Cascais", "Carcavelos", "Campo Grande", "Arroios", "Cais do Sodré"]
+address = ["Cascais", "Carcavelos, Cascais", "Campo Grande, Lisboa", "Arroios, Lisboa", "Cais do Sodré, Lisboa"]
 
 30.times do
   puts "Creating ride"
