@@ -64,5 +64,12 @@
         <%= render "booking_card", booking: booking %>
       <% end %>
     </div>
+
+    <% if @rides %>
+      <h1 class="mt-4">Your Rides</h1>
+      <% @rides.each do |ride| %>
+        <%= render "ride_card", ride: ride %>
+      <% end %>
+    <% end %>
   </div>
 </div>
