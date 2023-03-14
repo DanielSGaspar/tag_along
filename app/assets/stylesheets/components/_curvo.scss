@@ -1,0 +1,49 @@
+.box {
+  position: absolute;
+  left: -52px;
+  right: 0;
+  height: 241px;
+  top: -165px;
+  width: 538px;
+  background: linear-gradient(-20deg, rgb(57, 149, 255) 0%, rgb(97, 216, 239) 50%);
+  transform: skew(18deg) rotate(-22deg);
+  border-radius: 75px;
+}
+
+.wrapper {
+  position: relative;
+  height: 180px;
+}
+
+.main {
+  position: static;
+  width: 100vw;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 24px;
+}
+
+.profile-name {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.top-div {
+  top: -2rem;
+  left: -1rem;
+}
+
+.slide-menu-items {
+  list-style: none;
+}
+
+.slide-menu {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 80vw !important;
+}

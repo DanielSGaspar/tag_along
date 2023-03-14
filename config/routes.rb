@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/beach/:id', to: 'rides#beach', as: "beach"
   get '/location/:id', to: 'rides#location', as: "location"
   get '/dashboard', to: 'pages#dashboard'
+  get '/profile', to: 'pages#profile'
   get '/bookings/:id/confirmation', to: 'bookings#booking_confirmation', as: "confirmation"
   # get '/bookings/:id/reviews/new', to: 'reviews#new', as: "new_review"
   # post '/bookings/:id/reviews', to: 'reviews#create'
