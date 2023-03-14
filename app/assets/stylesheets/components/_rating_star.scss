@@ -1,0 +1,7 @@
+[data-star-rating] .gl-star-rating--stars[aria-label]::after {
+  display: none;
+}
+
+[data-star-rating] .gl-star-rating--stars[aria-label]::before {
+  background: none;
+}
