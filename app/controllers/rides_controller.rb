@@ -12,13 +12,13 @@ class RidesController < ApplicationController
   end
 
   def beach
-    @date = params[:date]
+    @date = params[:date] || Date.today.strftime("%Y-%m-%d")
     @beach = Beach.find(params[:id])
     @rides = Ride.where(beach: @beach).on_date(@date)
   end
 
   def location
-    @date = params[:date]
+    @date = params[:date] || Date.today.strftime("%Y-%m-%d")
     @location = Location.find(params[:id])
     @rides = @location.rides.on_date(@date)
   end
