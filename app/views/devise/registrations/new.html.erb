@@ -23,6 +23,9 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.input :address,
+                  required: true,
+                  input_html: { autocomplete: "your address" } %>
       <%= f.input :photo, as: :file %>
     </div>
     <div class="d-flex flex-column pt-3">

@@ -1,24 +1,23 @@
-<%= link_to booking_path(booking), class:"no-text-decoration" do %>
+<%= link_to ride_path(ride), class:"no-text-decoration" do %>
   <div class="booking-card mb-3">
     <div class="d-flex">
       <div class="img-ride-card d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.saltywaytravel.com/wp-content/uploads/2015/12/10_PraiaPequena_WEB.jpg);">
           <div style="margin: 0 10px;">
-            <h1><%= booking.ride.beach.name %></h1>
+            <h1><%= ride.beach.name %></h1>
           </div>
       </div>
       <div style="width: 50%;" class="mt-3">
         <div class="d-flex justify-content-between">
         </div>
         <div class="d-flex mx-4">
-          <p class="me-5 card-date"><i class="fa-solid fa-clock"></i> <%= booking.ride.date_time.strftime("%H:%M") %></p>
+          <p class="me-5 card-date"><i class="fa-solid fa-clock"></i> <%= ride.date_time.strftime("%H:%M") %></p>
         </div>
         <div class="d-flex justify-content-between">
           <div class="card-location-infos">
             <p>Pick up location</p>
-            <p style="font-size: 14px;"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i> <%= booking.ride.address %></p>
+            <p style="font-size: 14px;"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i> <%= ride.address %></p>
           </div>
         </div>
-        <div class="btn-blue"><%= link_to "Review",   new_booking_review_path(booking) %></div>
       </div>
     </div>
   </div>

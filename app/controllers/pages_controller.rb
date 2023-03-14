@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     @date = params[:date] || Date.today.strftime("%Y-%m-%d")
 
-    @rides = Ride.on_date(@date)
+    @rides = Ride.on_date(@date).near(current_user.address, 3)
 
     # Popular Beaches
     @popular = []
@@ -27,18 +27,10 @@ class PagesController < ApplicationController
     @locations = @locations.uniq
     @locations = @locations.sort_by { |beach| beach.rides.size }.reverse!.first(5)
 
-
-
-    carcavelos = Beach.find_by(name: "Carcavelos")
-    sao_juliao = Beach.find_by(name: "São Julião")
-    praia_grande = Beach.find_by(name: "Praia Grande")
-    foz_do_lizandro = Beach.find_by(name: "Foz do Lizandro")
-    guincho = Beach.find_by(name: "Guincho")
-    adraga = Beach.find_by(name: "Adraga")
-    @popular = [carcavelos, sao_juliao, praia_grande, foz_do_lizandro]
+    # Favorites
     @favorites = @user.all_favorites.map(&:beach)
-    @locations = Location.all
-    @bookings = Booking.all
+    @bookings = Booking.where(user: @user)
+    @rides = Ride.where(user: @user)
   end
 
 end
