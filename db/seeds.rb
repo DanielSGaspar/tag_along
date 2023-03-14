@@ -182,7 +182,9 @@ user_1 = User.new(
   email: "kelly@gmail.com",
   first_name: "Kelly",
   last_name: "Slater",
-  address: "R. Dom Pedro V 129, 1250-096 Lisboa"
+  address: "R. Dom Pedro V 129, 1250-096 Lisboa",
+  car: "BMW X6",
+  bio: "I'm an American professional surfer, best known for being crowned World Surf League champion a record 11 times. I'm widely regarded as the greatest professional surfer of all time, and hold 56 Championship Tour victories."
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/536c48fbf12a1702fd3cda434c915dfb.png?&x=96&y=96&icq=74&sig=5b14c630d1eeef1c82563ed19f32d12e")
 user_1.photo.attach(io: file, filename: "user_1.png", content_type: "image/png")
@@ -194,7 +196,9 @@ user_2 = User.new(
   email: "gabriel@gmail.com",
   first_name: "Gabriel",
   last_name: "Medina",
-  address: "R. do Alecrim 47A, 1200-014 Lisboa"
+  address: "R. do Alecrim 47A, 1200-014 Lisboa",
+  car: "Renault Clio",
+  bio: "I'm a Brazilian professional surfer who won the 2014, 2018 and 2021 WSL World Championships. With 17 WSL Championship Tour (CT) event wins and 29 Final appearances under my belt, I'm one of the most experienced surfers when it comes to producing the best surfing under pressure."
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/8a17743f5828d7d0834cb66e71cfe145.png?&x=96&y=96&icq=74&sig=54e7617fff2a0ce6786a0798db769d74")
 user_2.photo.attach(io: file, filename: "user_2.png", content_type: "image/png")
@@ -206,7 +210,9 @@ user_3 = User.new(
   email: "beth@gmail.com",
   first_name: "Bethany",
   last_name: "Hamilton",
-  address: "Escadinhas da Fonte da Pipa 2, 2710-557 Sintra"
+  address: "Escadinhas da Fonte da Pipa 2, 2710-557 Sintra",
+  car: "Audi A5",
+  bio: "I'm an American professional surfer and writer who survived a 2003 shark attack in which my left arm was bitten off and then ultimately returned to professional surfing."
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/46a464854286e9bba3cfa665a73a41f8.png?&x=96&y=96&icq=74&sig=bee937104bcdc99eb8aeb106cbf6f05b")
 user_3.photo.attach(io: file, filename: "user_3.png", content_type: "image/png")
@@ -218,7 +224,9 @@ user_4 = User.new(
   email: "kelia@gmail.com",
   first_name: "Kelia",
   last_name: "Moniz",
-  address: "Av. Alm. Reis 1 H, 1150-007 Lisboa"
+  address: "Av. Alm. Reis 1 H, 1150-007 Lisboa",
+  car: "Ford Focus",
+  bio: "I'm one of the most versatile surfers in the world, whether I'm long-boarding or short-boarding. Although I'm only in my mid-20s, I've been a prominent face on the world tour for over a decade, winning two ASP world titles and serving as a central figure in female Longboarding's ever-growing mainstream appreciation."
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/73a427859cbb85f84c6bddc48c4ab1f5.png?&x=96&y=96&icq=74&sig=e15b64b65114e17775a33dcf9e04870d")
 user_4.photo.attach(io: file, filename: "user_4.png", content_type: "image/png")
@@ -230,7 +238,9 @@ user_5 = User.new(
   email: "mason@gmail.com",
   first_name: "Mason",
   last_name: "Ho",
-  address: "R. de Santo António 34, 2655-312 Ericeira"
+  address: "R. de Santo António 34, 2655-312 Ericeira",
+  car: "Volvo V70",
+  bio: "I'm a professional surfer from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
 )
 file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/3acda4136d26a62dcb63704d235123bd.png?&x=96&y=96&icq=74&sig=c150c8d8a132514939a9c3a9131a3f84")
 user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")

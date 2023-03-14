@@ -1,23 +1,43 @@
+
 <% if current_user.photo.attached? %>
   <%= cl_image_tag current_user.photo.key, class: "avatar-profile" %>
 <% else %>
   <%= image_tag "user.png", class: "avatar-profile" %>
 <% end %>
+<div class="d-flex flex-row-reverse edit-position">
+  <%= link_to edit_user_registration_path, class: "edit-link" do %>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-3">
+        <i class="fa-solid fa-brush"></i>
+      </div>
+      <div class="col-9">
+        <p class="edit">edit</p>
+      </div>
+    </div>
+  </div>
+    <%# <div class="d-flex"></div> %>
+  <% end %>
+</div>
 
 <div class="profile-main d-flex flex-column">
   <div class="d-flex justify-content-between mx-5 my-3">
     <div class="profile-icon"><i class="fa-solid fa-location-dot"></i></div>
-    <strong class="my-2 profile-info">Costa da Caparica</strong>
+    <strong class="my-2 profile-info"><%= current_user.city %></strong>
   </div>
   <div class="d-flex justify-content-between mx-5 my-3">
     <div class="profile-icon"><i class="fa-solid fa-car"></i></div>
-    <strong class="my-2 profile-info">BMW X6</strong>
+    <strong class="my-2 profile-info"><%= current_user.car %></strong>
   </div>
   <div class="d-flex justify-content-between mx-5 my-3">
     <div class="profile-icon"><i class="fa-solid fa-pencil"></i></div>
-    <p class="my-2 profile-info">I'm just a normal guy who likes to surf on the weekends</p>
+    <p class="my-2 profile-info bio"><%= current_user.bio %></p>
   </div>
-  <div class="group-div">
-    <span></span>
+  <div class="d-flex justify-content-between mx-5 my-3">
+    <div class="profile-icon"><i class="fa-solid fa-star"></i></div>
+    <strong class="my-2 profile-info">Reviews</strong>
   </div>
+</div>
+<div class="reviews-div mx-5">
 </div>
