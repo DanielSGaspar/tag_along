@@ -10,6 +10,7 @@ require "open-uri"
 
 
 
+
 puts("Cleaning database")
 Booking.destroy_all
 Ride.destroy_all
@@ -142,7 +143,7 @@ praia_das_macas.save
 puts("Creating Sao Juliao")
 sao_juliao = Beach.new(
   name: "São Julião",
-  address: "Praia de São Julião, Ericeira",
+  address: "Praia de São Julião",
   location: ericeira
 )
 file = URI.open("https://images.unsplash.com/photo-1519907362090-ac2b395e476b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
@@ -152,7 +153,7 @@ sao_juliao.save
 puts("Creating Foz do Lizandro")
 foz_do_lizandro = Beach.new(
   name: "Foz do Lizandro",
-  address: "Praia da Foz do Lizandro, Ericeira",
+  address: "Praia da Foz do Lizandro",
   location: ericeira
 )
 file = URI.open("https://images.unsplash.com/photo-1599407158811-fb0f3a254f21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
@@ -163,6 +164,8 @@ puts("Creating Ribeira")
 ribeira_dilhas = Beach.new(
   name: "Ribeira D'Ilhas",
   address: "Praia da Ribeira D'Ilhas, Ericeira",
+  latitude: 38.9888836,
+  longitude: -9.418182,
   location: ericeira
 )
 file = URI.open("https://cdn.travel-in-portugal.com/sites/default/files/styles/x_large/public/beaches/ribeira-dilhas-ericeira.jpg")

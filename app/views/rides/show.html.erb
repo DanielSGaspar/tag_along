@@ -24,7 +24,9 @@
         <div>
           <p><strong><%= @ride.date_time.hour + 1%>:<%= @ride.date_time.strftime("%M")%></strong></p>
         </div>
-      <div><p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+        <div>
+          <p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p>
+        </div>
         <div>
           <p><%= @ride.beach.name %></p>
           <div style="font-size: 13px; margin-top: -15px;"><p><%= @ride.beach.location.name %></p></div>
