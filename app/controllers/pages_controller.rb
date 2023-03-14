@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     @date = params[:date] || Date.today.strftime("%Y-%m-%d")
 
-    @rides = Ride.on_date(@date)
+    @rides = Ride.on_date(@date).near(current_user.address, 3)
 
     # Popular Beaches
     @popular = []
@@ -31,6 +31,7 @@ class PagesController < ApplicationController
     @favorites = @user.all_favorites.map(&:beach)
 
     @bookings = Booking.where(user: @user)
+    @rides = Ride.where(user: @user)
   end
 
 end
