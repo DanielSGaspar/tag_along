@@ -29,7 +29,6 @@ class PagesController < ApplicationController
 
     # Favorites
     @favorites = @user.all_favorites.map(&:beach)
-
     @bookings = Booking.where(user: @user)
     @rides = Ride.where(user: @user)
   end
