@@ -1,0 +1,62 @@
+.box {
+  position: absolute;
+  left: -52px;
+  right: 0;
+  height: 241px;
+  top: -165px;
+  width: 538px;
+  background: linear-gradient(-20deg, rgb(57, 149, 255) 0%, rgb(97, 216, 239) 50%);
+  transform: skew(18deg) rotate(-22deg);
+  border-radius: 75px;
+}
+
+.wrapper {
+  position: relative;
+  height: 180px;
+}
+
+.main {
+  position: static;
+  width: 100vw;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 24px;
+}
+
+.profile-name {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.top-div {
+  top: -2rem;
+  left: -1rem;
+}
+
+.slide-menu-items {
+  list-style: none;
+  color: white;
+  padding-left: 0 !important;
+  li {
+    font-size: 20px;
+    padding-bottom: 40px;
+  }
+  a {
+    font-weight: bold;
+  }
+}
+
+.slide-menu {
+  background-color: #61D8EF;
+  width: 50vw !important;
+}
+
+.offcanvas {
+  --bs-offcanvas-border-width: 0px;
+}

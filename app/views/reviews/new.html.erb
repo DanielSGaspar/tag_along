@@ -1,11 +1,54 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @booking.ride.beach.photo.key %>');">
+  <div class="container">
+    <div class="d-flex">
+      <div>
+        <%= render "shared/back_btn" %>
+      </div>
+      <div class="ms-2">
+        <h1>Review your driver <%= @booking.ride.user.first_name %></h1>
+        <div class="d-flex">
+          <p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p>
+          <h5 class="mt-1" style="color: white;">to <%= @booking.ride.beach.name %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <hr style="border-width: 8px; border-color:#a9a6a6;">
+</div>
+
+<div>
+  <div class="ride-details">
+    <h2>Driver</h2>
+  </div>
+  <div class="driver-sesh">
+    <% if @booking.ride.user.photo.attached? %>
+      <%= cl_image_tag @booking.ride.user.photo.key %>
+    <% else %>
+      <%= image_tag "user.png" %>
+    <% end %>
+    <div class="driver-sesh-infos" style="position: relative">
+      <h2><%= @booking.ride.user.first_name %></h2>
+      <p>Hello, my name is <%= @booking.ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
+      <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <hr style="border-width: 8px; border-color:#a9a6a6;">
+</div>
 
 
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating, min: 1, max: 5 %>
+<div class="mx-2 mb-2">
+  <%= simple_form_for [@booking, @review] do |f| %>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
 
-  <%= f.submit "Submit Review" %>
-<% end %>
+    <%= f.input :content %>
+
+    <%= f.submit "Submit Review" %>
+  <% end %>
+</div>

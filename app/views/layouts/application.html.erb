@@ -13,7 +13,11 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% if current_page?(profile_path) %>
+      <%= render "shared/curvo" %>
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
     <%= render "shared/flashes" %>
 
     <%= yield %>

@@ -7,7 +7,18 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :bookings
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
+  validates :bio, length: {minimum: 100}
+
+  reverse_geocoded_by :latitude, :longitude do |obj,results|
+    if geo = results.first
+      obj.city    = geo.city
+    end
+  end
+
+  after_validation :reverse_geocode
 
   def full_name
    "#{first_name} #{last_name}"
