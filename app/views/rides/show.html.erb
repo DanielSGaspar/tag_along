@@ -2,9 +2,6 @@
   <div style="position: relative;">
     <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @ride.beach.photo.key %>');">
       <div class="container">
-        <div style="position: absolute; top: 50px;">
-          <%= render "shared/back_btn" %>
-        </div>
         <div style="padding-top: 50px;" class="title d-flex justify-content-center algin-items-center">
           <h1 class=""><%= @ride.date_time.strftime("%A") %>, <br> <%= @ride.date_time.strftime("%B") %> <%= @ride.date_time.day %>th</h1>
         </div>

@@ -276,7 +276,7 @@ end
     ride: Ride.all.sample,
     user: User.all.sample,
     price: price.sample,
-    seats: (1..seats-1).to_a.sample
+    seats: seats.sample
   )
 end
 
