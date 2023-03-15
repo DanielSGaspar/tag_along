@@ -250,21 +250,24 @@ user_5.save
 # #Rides
 
 user = [user_1, user_2, user_3, user_4, user_5]
-date_time = [DateTime.parse("12/03/2023 10:00"),DateTime.parse("12/03/2023 15:00"), DateTime.parse("15/03/2023 08:00"), DateTime.parse("11/03/2023 12:00"),DateTime.parse("13/03/2023 17:00")]
-price = [20, 10, 15]
-seats = 5
-address = ["Cascais", "Carcavelos, Cascais", "Campo Grande, Lisboa", "Arroios, Lisboa", "Cais do Sodré, Lisboa"]
+date_time = [DateTime.parse("14/03/2023 10:00"), DateTime.parse("15/03/2023 15:00"), DateTime.parse("16/03/2023 08:00"), DateTime.parse("17/03/2023 12:00"),DateTime.parse("18/03/2023 17:00"), DateTime.parse("19/03/2023 17:00") ,DateTime.parse("20/03/2023 17:00")]
+price = [2000, 1000, 1500]
+seats = [1, 2, 3]
+address = ["R. de Santo António, Ericeira", "Escadinhas da Fonte da Pipa, Sintra", "Av. Alm. Reis, Lisboa", "R. do Alecrim, Lisboa", "R. Dom Pedro V, Lisboa"]
 
-30.times do
-  puts "Creating ride"
+counter = 1
+
+70.times do
+  puts "Creating ride ##{counter}"
   ride = Ride.create(
     user: user.sample,
     date_time: date_time.sample,
-    price: price.sample,
-    seats: seats,
+    price_cents: price.sample,
+    seats: seats.sample,
     beach: Beach.all.sample,
     address: address.sample
   )
+  counter += 1
 end
 
 30.times do

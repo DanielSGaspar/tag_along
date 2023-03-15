@@ -19,6 +19,9 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import PriceUpdateController from "./price_update_controller"
+application.register("price-update", PriceUpdateController)
+
 import ScrollIntoController from "./scroll_into_controller"
 application.register("scroll-into", ScrollIntoController)
 

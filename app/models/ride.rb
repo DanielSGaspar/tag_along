@@ -9,8 +9,9 @@ class Ride < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   delegate :location, to: :beach
 
-  validates :date_time, :price, :address, :seats, presence: true
+  validates :date_time, :price_cents, :address, :seats, presence: true
 
+  monetize :price_cents
   ## delegate is equal to the code below
   # def location
   #   beach.location

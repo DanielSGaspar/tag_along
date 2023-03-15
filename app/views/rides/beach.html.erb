@@ -1,9 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @beach.photo.key %>');">
   <div class="d-flex justify-content-between mx-2">
     <%= render "shared/back_btn" %>
-    <%= link_to favorite_beach_path, data: {turbo_method: :post} do %>
-      <i class="fa-<%= current_user.favorited?(@beach) ? 'solid' : 'regular' %> fa-heart btn-heart"></i>
-    <% end %>
+    <%= render "shared/heart_btn" %>
+
   </div>
 </div>
 

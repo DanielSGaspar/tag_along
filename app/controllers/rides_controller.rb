@@ -38,9 +38,8 @@ class RidesController < ApplicationController
   end
 
   def show
-    @beaches = Beach.all
-
     @ride = Ride.find(params[:id])
+    @booking = Booking.new
     @markers = [{
       lat: @ride.latitude,
       lng: @ride.longitude

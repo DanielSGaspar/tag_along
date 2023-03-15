@@ -1,10 +1,12 @@
 .show_rides {
   background-color: rgb(235, 233, 233);
+  background-position: center;
+  background-size: cover;
+  height: 200px;
 }
 
 .show_rides .title {
-  color: rgb(12, 12, 12);
-  padding: 24px 24px 15px;
+  color: rgb(255, 255, 255);
 }
 
 .driver-sesh {
