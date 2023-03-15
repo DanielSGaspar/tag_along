@@ -42,7 +42,7 @@
     </div>
     <div>
       <div style="background-color: #61D8EF; border-radius: 35px; padding: 5px 10px;">
-        <div>€ <%= @booking.price %></div>
+        <div><%= humanized_money_with_symbol(@booking.amount) %></div>
       </div>
     </div>
   </div>
