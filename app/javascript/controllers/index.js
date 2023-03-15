@@ -30,3 +30,6 @@ application.register("star-rating", StarRatingController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import WheatherApiController from "./wheather_api_controller"
+application.register("wheather-api", WheatherApiController)
