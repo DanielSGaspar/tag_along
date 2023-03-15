@@ -1,0 +1,5 @@
+<%= link_to favorite_beach_path, class:"no-text-decoration", data: {turbo_method: :post} do %>
+  <div class="d-flex justify-content-center align-items-center btn-heart">
+    <i class="fa-<%= current_user.favorited?(@beach) ? 'solid' : 'regular' %> fa-heart"></i>
+  </div>
+<% end %>
