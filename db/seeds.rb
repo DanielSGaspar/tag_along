@@ -242,9 +242,9 @@ user = [user_1, user_2, user_3, user_4, user_5]
 date_time = [DateTime.parse("12/03/2023 10:00"),DateTime.parse("12/03/2023 15:00"), DateTime.parse("15/03/2023 08:00"), DateTime.parse("11/03/2023 12:00"),DateTime.parse("13/03/2023 17:00")]
 price = [20, 10, 15]
 seats = 5
-address = ["Cascais", "Carcavelos, Cascais", "Campo Grande, Lisboa", "Arroios, Lisboa", "Cais do Sodré, Lisboa"]
+address = ["R. Afonso Sanches 54, 2750-281 Cascais", "Avenida Marginal, Praia de Carcavelos, 2775-604 Lisboa", "Campo Grande 294, 1700-097 Lisboa", "Rua de Arroios 137, 1150-053 Lisboa", "R. Ribeira Nova 36, 1200-425 Lisboa"]
 
-30.times do
+50.times do
   puts "Creating ride"
   ride = Ride.create(
     user: user.sample,
