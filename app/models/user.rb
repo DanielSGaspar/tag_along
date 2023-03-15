@@ -10,6 +10,9 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  has_many :rides
+  has_many :reviews, through: :rides
+
   validates :bio, length: {minimum: 100}
 
   reverse_geocoded_by :latitude, :longitude do |obj,results|
