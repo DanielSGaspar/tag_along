@@ -85,3 +85,7 @@ gem "geocoder"
 
 # adding favorites
 gem "acts_as_favoritor"
+
+# payment system
+gem 'stripe'
+gem 'money-rails'

@@ -32,5 +32,4 @@ class PagesController < ApplicationController
     @bookings = Booking.where(user: @user)
     @rides = Ride.where(user: @user)
   end
-
 end

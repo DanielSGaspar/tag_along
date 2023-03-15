@@ -65,7 +65,7 @@
       <% end %>
     </div>
 
-    <% if @rides %>
+    <% unless @rides.nil? %>
       <h1 class="mt-4">Your Rides</h1>
       <% @rides.each do |ride| %>
         <%= render "ride_card", ride: ride %>
