@@ -6,122 +6,185 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-between">
-    <div class="card-location-infos mx-3 mt-4">
-      <div class="d-flex">
-        <div>
-          <p><strong><%= @ride.date_time.strftime("%H:%M") %></strong></p>
-        </div>
-        <div>
-          <p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p>
-        </div>
-        <div>
-          <p><%= @ride.address %></p>
-          <div style="font-size: 13px; margin-top: -15px;"><p> Lisboa </p></div>
-        </div>
-      </div>
-      <div class="d-flex">
-        <div>
-          <p><strong><%= @ride.date_time.hour + 1%>:<%= @ride.date_time.strftime("%M")%></strong></p>
-        </div>
-      <div><p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
-        <div>
-          <p><%= @ride.beach.name %></p>
-          <div style="font-size: 13px; margin-top: -15px;"><p><%= @ride.beach.location.name %></p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div>
-    <hr style="border-width: 8px; border-color:#a9a6a6;">
-  </div>
-
-  <div class="d-flex justify-content-between mx-3" style="margin-bottom: -14px;">
-    <div>
-      <p>Price per seat:</p>
-    </div>
-    <div>
-      <div style="background-color: #61D8EF; border-radius: 35px; padding: 3px 10px;" class="d-flex justify-content-center">
-        <div>€ <%= @ride.price %></div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <hr style="border-width: 8px; border-color:#a9a6a6;">
-  </div>
-
-  <div>
-    <div class="ride-details">
-      <h2>Driver</h2>
-    </div>
-    <div class="driver-sesh">
-      <% if @ride.user.photo.attached? %>
-        <%= cl_image_tag @ride.user.photo.key %>
-      <% else %>
-        <%= image_tag "user.png" %>
-      <% end %>
-      <div class="driver-sesh-infos" style="position: relative">
-        <h2><%= @ride.user.first_name %></h2>
-        <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
-        <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <hr style="border-width: 8px; border-color:#a9a6a6;">
-  </div>
-
-  <div>
-    <div class="ride-details">
-      <h2>Ride Details</h2>
-    </div>
-    <div class="mx-3 permission-ride">
-      <div class="d-flex">
-        <div>
-          <i class="fa-solid fa-paw paw-icon me-3"></i>
-        </div>
-        <div>
-          <p>pets allowed</p>
+    <%= simple_form_for [@ride, @booking], data: { controller: 'price-update' } do |f|%>
+      <%# Ride hour and addresses %>
+      <div class="d-flex justify-content-between">
+        <div class="card-location-infos mx-3 mt-4">
+          <div class="d-flex">
+            <div>
+              <p><strong><%= @ride.date_time.strftime("%H:%M") %></strong></p>
+            </div>
+            <div>
+              <p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p>
+            </div>
+            <div>
+              <p><%= @ride.address %></p>
+              <div style="font-size: 13px; margin-top: -15px;"><p> Lisboa </p></div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div>
+              <p><strong><%= @ride.date_time.hour + 1%>:<%= @ride.date_time.strftime("%M")%></strong></p>
+            </div>
+          <div><p class="mx-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+            <div>
+              <p><%= @ride.beach.name %></p>
+              <div style="font-size: 13px; margin-top: -15px;"><p><%= @ride.beach.location.name %></p></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="d-flex">
-        <div>
-          <i class="fa-solid fa-ban-smoking me-3"></i>
+
+      <div>
+        <hr style="border-width: 8px; border-color:#a9a6a6;">
+      </div>
+
+      <%# Ride price  %>
+      <div class="container mt-3">
+        <%= f.input :seats, collection: 1..3, input_html: { data: { target: "price-update.seats" } }%>
+      </div>
+      <div class="container mt-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p style="margin-bottom: 0;">Price per seat:</p>
+          </div>
+          <div>
+            <div style="padding: 5px 10px;">
+              <div data-price-update-target="price"><%= humanized_money_with_symbol(@ride.price) %></div>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>smoking not allowed</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h3 style="margin-bottom: 0;">Total:</h3>
+          </div>
+          <div>
+            <div style="background-color: #61D8EF; border-radius: 35px; padding: 5px 10px;">
+              <div data-price-update-target="totalPrice">€10</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <hr style="border-width: 8px; border-color:#a9a6a6;">
+      </div>
+
+      <%# Driver information %>
+      <div>
+        <div class="ride-details">
+          <h2>Driver</h2>
+        </div>
+        <div class="driver-sesh">
+          <% if @ride.user.photo.attached? %>
+            <%= cl_image_tag @ride.user.photo.key %>
+          <% else %>
+            <%= image_tag "user.png" %>
+          <% end %>
+          <div class="driver-sesh-infos" style="position: relative">
+            <h2><%= @ride.user.first_name %></h2>
+            <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
+            <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
+          </div>
         </div>
       </div>
-      <div class="d-flex">
-        <div>
-          <i class="fa-solid fa-chess-bishop me-3"></i>
+
+      <div>
+        <hr style="border-width: 8px; border-color:#a9a6a6;">
+      </div>
+
+      <%# Ride details (Pets, smoking and stuff) + MAP%>
+      <div>
+        <div class="ride-details">
+          <h2>Ride Details</h2>
         </div>
-        <div>
-          <p>2/5 boards</p>
+        <div class="mx-3 permission-ride">
+          <div class="d-flex">
+            <div>
+              <i class="fa-solid fa-paw paw-icon me-3"></i>
+            </div>
+            <div>
+              <p>pets allowed</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div>
+              <i class="fa-solid fa-ban-smoking me-3"></i>
+            </div>
+            <div>
+              <p>smoking not allowed</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div>
+              <i class="fa-solid fa-chess-bishop me-3"></i>
+            </div>
+            <div>
+              <p>2/5 boards</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div style="width: 100%; height: 500px;" class="rounded-4 mt-1 mb-2"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+
+      </div>
+      <hr style="border-width: 8px; border-color:#a9a6a6;">
+
+      <%# Add Cancellation Policy, Ground Rules and Conditions %>
+      <%# Cancellation Policy %>
+      <div class="container mt-3">
+        <h2>Cancellation Policy</h2>
+        <p><strong>Free cancellation 24 hours before pick up.</strong> Non-refundable for later cancellations.</p>
+      </div>
+      <hr style="border-width: 8px; border-color:#a9a6a6;">
+      <%# Ground Rules %>
+      <div class="container mt-3">
+        <h2>Ground Rules</h2>
+        <p>We ask every one to remember a few simple things about how have a harmonious ride:</p>
+        <div class="d-flex align-items-center mb-2">
+          <i class="fa-solid fa-thumbs-up me-2"></i>
+          <p style="margin-bottom: 0;">Respect the driver and the other passengers</p>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+          <i class="fa-solid fa-thumbs-up me-2"></i>
+          <p style="margin-bottom: 0;">Respect the drivers car</p>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+          <i class="fa-solid fa-thumbs-down me-2"></i>
+          <p style="margin-bottom: 0;">Leave trash behind</p>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div style="width: 100%; height: 500px;" class="rounded-4 mt-1 mb-2"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <hr style="border-width: 8px; border-color:#a9a6a6;">
+      <%# Conditions %>
+      <div class="container mt-3">
+        <p><em>By selecting the button bellow, I agree to the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">TagAlong Booking & Refund Policies</a>, and that TagAlong can charge my payment method if I'm responsible for damage.</em></p>
       </div>
-    </div>
+      <%# Booking/ Editing button !!!DONE!!!%>
 
-  </div>
-
-
-  <div class="bk-nw-bx" style="position:fixed; bottom: 0; width: 100%;">
-    <% if current_user == @ride.user %>
-      <%= link_to "Edit", edit_ride_path, class:"btn-blue btn-book" %>
-    <% else %>
-      <%= link_to "Book", new_ride_booking_path(@ride), class:"btn-blue btn-book" %>
+      <div class="d-flex justify-content-center my-3">
+        <%= f.submit "Book now", class:"btn-blue"%>
+      </div>
     <% end %>
   </div>
 
 </div>
+
+<%# Create alternative for the owner of the Ride %>
+
+<%#
+<div class="bk-nw-bx" style="position:fixed; bottom: 0; width: 100%;">
+  <% if current_user == @ride.user %>
+    <%# <%= link_to "Edit", edit_ride_path, class:"btn-blue btn-book" %>
+  <%# <% else %>
+    <%# <%= link_to "Book", new_ride_booking_path(@ride), class:"btn-blue btn-book" %>
+  <%# <% end %>
+<%# </div>
+%>

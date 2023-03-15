@@ -40,7 +40,7 @@
         </div>
         <div>
           <div style="padding: 5px 10px;">
-            <div>€ <%= @ride.price %></div>
+            <div><%= humanized_money_with_symbol(@ride.price) %></div>
           </div>
         </div>
       </div>

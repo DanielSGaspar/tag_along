@@ -237,20 +237,23 @@ user_5.save
 
 user = [user_1, user_2, user_3, user_4, user_5]
 date_time = [DateTime.parse("14/03/2023 10:00"), DateTime.parse("15/03/2023 15:00"), DateTime.parse("16/03/2023 08:00"), DateTime.parse("17/03/2023 12:00"),DateTime.parse("18/03/2023 17:00"), DateTime.parse("19/03/2023 17:00") ,DateTime.parse("20/03/2023 17:00")]
-price = [20, 10, 15]
+price = [2000, 1000, 1500]
 seats = [1, 2, 3]
 address = ["R. de Santo António, Ericeira", "Escadinhas da Fonte da Pipa, Sintra", "Av. Alm. Reis, Lisboa", "R. do Alecrim, Lisboa", "R. Dom Pedro V, Lisboa"]
 
+counter = 1
+
 70.times do
-  puts "Creating ride"
+  puts "Creating ride ##{counter}"
   ride = Ride.create(
     user: user.sample,
     date_time: date_time.sample,
-    price: price.sample,
+    price_cents: price.sample,
     seats: seats.sample,
     beach: Beach.all.sample,
     address: address.sample
   )
+  counter += 1
 end
 
 puts("Created seeds")

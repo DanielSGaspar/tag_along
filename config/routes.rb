@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: %i[show update] do
     resources :reviews, only: %i[new create]
+    resources :payments, only: :new
   end
 
   get '/beach/:id', to: 'rides#beach', as: "beach"
