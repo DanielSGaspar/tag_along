@@ -32,6 +32,24 @@
   color: white;
 }
 
+.btn-blue-navbar {
+  background-color: #61D8EF;
+	padding: 7px 20px;
+  border-radius: 25px;
+	color: white;
+  vertical-align: top;
+  border-width: 0px;
+  transition: background-color 0.3s ease;
+  height: 50px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn-blue-navbar:hover {
+  background-color: #2AC7E5;
+  color: white;
+}
+
 .btn-back {
   background-color: #61d7efac;
   border-radius: 50%;
