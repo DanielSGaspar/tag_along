@@ -20,17 +20,15 @@ class User < ApplicationRecord
   has_many :rides
   has_many :reviews, through: :rides
 
-  validates :bio, length: {minimum: 100}
-
-  reverse_geocoded_by :latitude, :longitude do |obj,results|
+  reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
-      obj.city    = geo.city
+      obj.city = geo.city
     end
   end
 
   after_validation :reverse_geocode
 
   def full_name
-   "#{first_name} #{last_name}"
+    "#{first_name} #{last_name}"
   end
 end
