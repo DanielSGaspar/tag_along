@@ -6,7 +6,7 @@ class RideSearch
   def search(records = Ride.all)
     records = records.includes(beach: :location)
     records = records.where(location: { name: @params[:location] }) if @params[:location].present?
-    records = records.where(seats: @params[:seats]..5) if @params[:seats].present?
+    records = records.where(seats: @params[:seats].to_i..5) if @params[:seats].present?
     records = records.where(date_time: date_time_interval) if @params[:date_time].present?
     records = records.near(@params[:address], 10) if @params[:address].present?
     records

@@ -1,18 +1,27 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);">
-  <div class="container">
-    <h1>New Ride</h1>
+<div style="position: relative;">
+  <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);">
+    <div class="container">
+      <div style="padding-top: 50px;" class="title d-flex justify-content-center algin-items-center">
+        <h1>New Ride</h1>
+      </div>
+    </div>
   </div>
 </div>
-<div class="container mt-3">
-  <%= simple_form_for [@ride] do |f|%>
-    <%= f.association :beach, collection: Beach.order('name ASC')%>
-    <%= f.input :date_time, as: :datetime%>
-    <%= f.input :address,
-      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-      wrapper_html: {class: "map-search", data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } }
-    %>
-    <%= f.input :seats%>
-    <%= f.input :price%>
-    <%= f.submit%>
-  <% end %>
+<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0; position: relative; margin-top: -18px;">
+  <div class="space-div"></div>
+  <div class="mt-4 ride-new">
+    <%= simple_form_for [@ride] do |f|%>
+      <%= f.association :beach, collection: Beach.order('name ASC'), label: false, prompt: "Beach" %>
+      <%= f.input :date_time, as: :datetime, label: false %>
+      <%= f.input :address, label: false,
+        input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+        wrapper_html: {class: "map-search", data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } }
+      %>
+      <%= f.input :seats, collection: 1..5, label: false, prompt: "Seats" %>
+      <%= f.input :price, label: false, placeholder: "Price (€)" %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit class: "btn-blue" %>
+      </div>
+    <% end %>
+  </div>
 </div>
