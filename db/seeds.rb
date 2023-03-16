@@ -12,6 +12,8 @@ require "open-uri"
 
 
 puts("Cleaning database")
+Message.destroy_all
+Chatroom.destroy_all
 Booking.destroy_all
 Ride.destroy_all
 Location.destroy_all
@@ -247,13 +249,27 @@ file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/3acda4136d26a62dcb6
 user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")
 user_5.save
 
+puts("Creating Ze-Manel")
+user_5 = User.new(
+  password: password,
+  email: "zemanel@gmail.com",
+  first_name: "Ze",
+  last_name: "Manel",
+  address: "R. de Santo António 34, 2655-312 Ericeira",
+  car: "Ford Focus",
+  bio: "I'm a professional gangster from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
+)
+file = URI.open("https://static.wikia.nocookie.net/naruto-onepiece-fairytail/images/9/97/Vinsmoke_Sanji.png/revision/latest?cb=20161215200750")
+user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")
+user_5.save
+
 # #Rides
 
 user = [user_1, user_2, user_3, user_4, user_5]
-date_time = [DateTime.parse("14/03/2023 10:00"), DateTime.parse("15/03/2023 15:00"), DateTime.parse("16/03/2023 08:00"), DateTime.parse("17/03/2023 12:00"),DateTime.parse("18/03/2023 17:00"), DateTime.parse("19/03/2023 17:00") ,DateTime.parse("20/03/2023 17:00")]
+date_time = [DateTime.parse("16/03/2023 10:00"), DateTime.parse("17/03/2023 15:00"), DateTime.parse("18/03/2023 08:00"), DateTime.parse("19/03/2023 12:00"),DateTime.parse("20/03/2023 17:00"), DateTime.parse("21/03/2023 17:00") ,DateTime.parse("22/03/2023 17:00")]
 price = [2000, 1000, 1500]
 seats = [1, 2, 3]
-address = ["R. de Santo António, Ericeira", "Escadinhas da Fonte da Pipa, Sintra", "Av. Alm. Reis, Lisboa", "R. do Alecrim, Lisboa", "R. Dom Pedro V, Lisboa"]
+address = ["R. de Santo António, Ericeira", "R Sintra 2710-084 Sintra, Lisboa, Portugal", "Av. Alm. Reis, Lisboa", "R. do Alecrim, Lisboa", "R. Dom Pedro V, Lisboa"]
 
 counter = 1
 
@@ -272,11 +288,13 @@ end
 
 30.times do
   puts "Creating booking"
+  ride = Ride.all.sample
   ride = Booking.create!(
-    ride: Ride.all.sample,
+    ride: ride,
     user: User.all.sample,
-    price: price.sample,
-    seats: seats.sample
+    amount_cents: ride.price_cents,
+    seats: ride.seats,
+    state: "paid"
   )
 end
 
