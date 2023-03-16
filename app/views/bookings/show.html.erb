@@ -6,8 +6,28 @@
     <h1>Your ride to <%= @ride.beach.name %></h1>
   </div>
 </div>
-<div class="container mt-3">
+<div class="container mt-3 d-flex justify-content-between">
   <h2>Booking details</h2>
+  <% if @booking.state == "pending" %>
+    <div style="background-color: blue; padding: 5px 15px; color: white;">
+      <button id="pay" style="background-color: transparent; border: none; color: white;"><%= @booking.state %></button>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @booking.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  <% else %>
+    <div style="background-color: green; padding: 5px 15px; color: white;">
+      <p style="margin-bottom: 0;"><%= @booking.state %></p>
+    </div>
+  <% end %>
+
 </div>
 <div class="container">
   <div class="d-flex justify-content-between">
