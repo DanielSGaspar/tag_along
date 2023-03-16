@@ -85,14 +85,14 @@
         </div>
 
         <div class="d-flex mt-3">
-          <div style="border-radius: 50%">
+          <div>
             <% if @ride.user.photo.attached? %>
-              <%= cl_image_tag @ride.user.photo.key, class: "rounded-circle" %>
+              <%= cl_image_tag @ride.user.photo.key, class: "rounded-circle rides-image" %>
             <% else %>
-              <%= image_tag "user.png", class: "rounded-circle" %>
+              <%= image_tag "user.png", class: "rounded-circle rides-image" %>
             <% end %>
           </div>
-          <div class="" style="">
+          <div class="ms-3" style="">
             <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
           </div>
         </div>
