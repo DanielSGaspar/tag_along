@@ -241,7 +241,7 @@ user_5 = User.new(
   email: "mason@gmail.com",
   first_name: "Mason",
   last_name: "Ho",
-  address: "R. de Santo António 34, 2655-312 Ericeira",
+  address: "Rua De Santo António Da Glória, 1250-217 Lisbon, Lisbon, Portugal",
   car: "Volvo V70",
   bio: "I'm a professional surfer from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
 )
@@ -297,7 +297,7 @@ user_9 = User.new(
   email: "carissa@gmail.com",
   first_name: "Carissa",
   last_name: "Moore",
-  address: "Azinhaga Do Beiriz 1, 2705-092 Colares",
+  address: "Azinhaga Do Beiriz, 2705-092 Colares, Lisbon, Portugal",
   car: "Mazda CX-5",
   bio: "I like to surf"
 )
@@ -321,11 +321,11 @@ user_10.save
 
 # #Rides
 
-user = [user_1, user_2, user_3, user_4, user_5, user_6, user_7, user_8, user_9, user_10]
+user = [user_1, user_2, user_3, user_4, user_5, user_7, user_8, user_9, user_10]
 date_time = [DateTime.parse("20/03/2023 10:00"), DateTime.parse("17/03/2023 15:00"), DateTime.parse("18/03/2023 08:00"), DateTime.parse("19/03/2023 12:00"),DateTime.parse("22/03/2023 17:00"), DateTime.parse("21/03/2023 17:00") ,DateTime.parse("23/03/2023 17:00")]
 price = [2000, 1000, 1500]
 seats = [1, 2, 3]
-address = ["R. de Santo António, Ericeira", "R Sintra 2710-084 Sintra, Lisboa, Portugal", "Av. Alm. Reis, Lisboa", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
+address = ["R. de Santo António, Ericeira", "Avenida De Roma, 1700-178 Lisbon, Lisbon, Portugal", "Avenida Almirante Reis, 1150-022 Lisbon, Lisbon, Portugal", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
 
 counter = 1
 
