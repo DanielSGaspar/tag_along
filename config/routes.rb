@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :rides, only: %i[index new show create edit update destroy] do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[create]
     resources :chatrooms, only: :create
   end
 
@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   get '/profile', to: 'pages#profile'
   get '/bookings/:id/confirmation', to: 'bookings#booking_confirmation', as: "confirmation"
-  # get '/bookings/:id/reviews/new', to: 'reviews#new', as: "new_review"
-  # post '/bookings/:id/reviews', to: 'reviews#create'
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   resources :beaches, only: [] do
     member do
