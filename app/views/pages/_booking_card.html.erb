@@ -1,4 +1,4 @@
-<%= link_to booking_path(booking), class:"no-text-decoration", data: { turbolinks: false }  do %>
+<%= link_to booking_path(booking), class:"no-text-decoration", data: { turbo: false }  do %>
   <div class="booking-card mb-3 position-relative">
     <div class="position-absolute" style="top: 16px; right: 0;">
       <% if booking.state == "pending" %>
