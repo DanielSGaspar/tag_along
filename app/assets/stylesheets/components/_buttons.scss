@@ -25,6 +25,7 @@
   transition: background-color 0.3s ease;
   height: 50px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .btn-blue:hover {
@@ -116,6 +117,13 @@
   box-shadow: 0px 0px 5px grey;
   background-color: green;
 }
+
+.btn-goback {
+  text-decoration: none;
+  color: #444444;
+  font-weight: bold;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .btn-search {

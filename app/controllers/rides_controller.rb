@@ -53,6 +53,7 @@ class RidesController < ApplicationController
 
   def edit
     @ride = Ride.find(params[:id])
+    @ride.date_time = nil
   end
 
   def update
