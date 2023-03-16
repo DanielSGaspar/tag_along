@@ -72,45 +72,34 @@
             </div>
           </div>
         </div>
-
-  <div>
-    <div class="ride-details">
-      <h2>Driver</h2>
-    </div>
-    <div class="driver-sesh">
-      <% if @ride.user.photo.attached? %>
-        <%= cl_image_tag @ride.user.photo.key %>
-      <% else %>
-        <%= image_tag "user.png" %>
-      <% end %>
-      <div class="driver-sesh-infos" style="position: relative">
-        <h2><%= @ride.user.first_name %></h2>
-        <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
-        <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
-        <div class="btn-blue">
-          <%= link_to "Message #{@ride.user.first_name}", ride_chatrooms_path(@ride), data: { turbo_method: :post } %>
-        </div>
       </div>
 
       <div>
         <hr style="border-width: 8px; border-color:#a9a6a6;">
       </div>
 
-      <%# Driver information %>
-      <div>
-        <div class="ride-details">
-          <h2>Driver</h2>
+        <%# Driver information %>
+      <div class="container mt-3">
+        <div>
+          <h2>Driver: <%= @ride.user.first_name %></h2>
         </div>
-        <div class="driver-sesh">
-          <% if @ride.user.photo.attached? %>
-            <%= cl_image_tag @ride.user.photo.key %>
-          <% else %>
-            <%= image_tag "user.png" %>
-          <% end %>
-          <div class="driver-sesh-infos" style="position: relative">
-            <h2><%= @ride.user.first_name %></h2>
+
+        <div class="d-flex mt-3">
+          <div style="border-radius: 50%">
+            <% if @ride.user.photo.attached? %>
+              <%= cl_image_tag @ride.user.photo.key, class: "rounded-circle" %>
+            <% else %>
+              <%= image_tag "user.png", class: "rounded-circle" %>
+            <% end %>
+          </div>
+          <div class="" style="">
             <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
-            <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-1">
+          <div><i class="fa-solid fa-car"></i> Ford F-150</div>
+          <div>
+            <%= link_to "Message #{@ride.user.first_name}", ride_chatrooms_path(@ride), data: { turbo_method: :post }, class:"btn-blue" %>
           </div>
         </div>
       </div>
@@ -119,7 +108,7 @@
         <hr style="border-width: 8px; border-color:#a9a6a6;">
       </div>
 
-      <%# Ride details (Pets, smoking and stuff) + MAP%>
+        <%# Ride details (Pets, smoking and stuff) + MAP%>
       <div>
         <div class="ride-details">
           <h2>Ride Details</h2>
@@ -198,7 +187,6 @@
       </div>
     <% end %>
   </div>
-
 </div>
 
 <%# Create alternative for the owner of the Ride %>
