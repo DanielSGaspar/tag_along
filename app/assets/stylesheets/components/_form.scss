@@ -1,25 +1,143 @@
-.mapboxgl-ctrl-geocoder {
-  height: 50px;
-  border-width: 0px;
-  border-radius: 25px 0 0 25px;
-  background-color: #ffffff75;
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-right: -1px;
-  width: 100%;
+// rides
+#booking_seats {
+  border-radius: 20px;
+  border: 1px solid #61D8EF;
 }
 
-.mapboxgl-ctrl-geocoder--input::placeholder {
-  color: #ffffff;
+.ride-new {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  padding: 1rem;
+  margin: 1rem;
+
+  .mapboxgl-ctrl-geocoder {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 25px;
+    margin-right: -1px;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .mapboxgl-ctrl-geocoder--input::placeholder {
+    color: #5f5f5f;
+  }
+
+  .mapboxgl-ctrl-geocoder--input {
+    color: #5f5f5f;
+    height: 50px;
+    padding-left: 11px;
+    font-size: 16px;
+    font-weight: bold;
+
+    &:focus, &:active {
+      outline: none;
+      color: #5f5f5f;
+    }
+  }
+
+  #ride_seats {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 25px;
+    color: #5f5f5f;
+    background-color: white;
+  }
+
+  #ride_beach_id {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 25px;
+    color: #5f5f5f;
+    background-color: white;
+  }
+
+  #ride_price {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 25px;
+    color: #5f5f5f;
+    background-color: white;
+    font-weight: bold;
+  }
+
+  #ride_date_time_1i {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 25px 0 0 25px;
+    color: #5f5f5f;
+    background-color: white;
+    background-image: none;
+  }
+  #ride_date_time_2i {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 0;
+    color: #5f5f5f;
+    background-color: white;
+    background-image: none;
+  }
+  #ride_date_time_3i {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 0px;
+    color: #5f5f5f;
+    background-color: white;
+    background-image: none;
+  }
+  #ride_date_time_4i {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 0;
+    color: #5f5f5f;
+    background-color: white;
+    background-image: none;
+  }
+  #ride_date_time_5i {
+    height: 50px;
+    border: 1px solid #61D8EF;
+    border-radius: 0 25px 25px 0;
+    color: #5f5f5f;
+    background-color: white;
+    background-image: none;
+  }
+  .form-select {
+    padding-left: 2.8vw;
+    padding-right: 0.5vw;
+    font-weight: bold;
+  }
 }
 
-.mapboxgl-ctrl-geocoder--input {
-  color: #ffffff;
-  height: 50px;
+.space-div{
+  height: 10px;
+}
 
-  &:focus, &:active {
-    outline: none;
+// landing page
+.home-background {
+  .mapboxgl-ctrl-geocoder {
+    height: 50px;
+    border-width: 0px;
+    border-radius: 25px 0 0 25px;
+    background-color: #ffffff75;
     color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-right: -1px;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .mapboxgl-ctrl-geocoder--input::placeholder {
+    color: #ffffff;
+  }
+
+  .mapboxgl-ctrl-geocoder--input {
+    color: #ffffff;
+    height: 50px;
+
+    &:focus, &:active {
+      outline: none;
+      color: #ffffff;
+    }
   }
 }
 
@@ -78,7 +196,8 @@ select {
 
 .container-form {
   background-color: white;
-  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
   padding: 25px;
 }
 
@@ -132,13 +251,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .form-inline {
     flex-direction: column !important;
   }
-  .mapboxgl-ctrl-geocoder {
-    height: 40px;
-    border-radius: 20px;
-  }
-  .mapboxgl-ctrl-geocoder--input {
-    height: 40px;
-    text-align: center;
+  .home-background {
+    .mapboxgl-ctrl-geocoder {
+      height: 40px;
+      border-radius: 20px;
+    }
+    .mapboxgl-ctrl-geocoder--input {
+      height: 40px;
+      text-align: center;
+    }
   }
   #search_location {
     height: 40px;
