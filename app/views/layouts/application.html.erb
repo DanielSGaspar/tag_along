@@ -17,6 +17,8 @@
       <%= render "shared/curvo" %>
     <% elsif current_page?(dashboard_path) || current_page?(root_path) %>
       <%= render "shared/navbar" %>
+    <% elsif params[:id] && current_page?(chatroom_path(id: params[:id]))%>
+      <%= render "shared/message_nav" %>
     <% else %>
       <%= render "shared/simple_nav" %>
     <% end %>
