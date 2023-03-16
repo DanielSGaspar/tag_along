@@ -67,6 +67,10 @@
   }
 }
 
+.no-bullet {
+  list-style: none;
+}
+
 // Large screens
 @media (min-width: 576px) and (max-width: 10000px) {
   .brand {
