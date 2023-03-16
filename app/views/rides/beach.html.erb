@@ -6,7 +6,7 @@
 
 <div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0;">
   <div class="container-rides-index-card mx-3">
-    <div><h1 class="text-center">Rides to <%= @beach.name %></h1></div>
+    <div><h1 class="text-center" style="padding-top: 16px; margin-bottom: 16px;">Rides to <%= @beach.name %></h1></div>
       <% @rides.each do |ride|%>
         <%= render "ride_card", ride: ride %>
       <%end%>

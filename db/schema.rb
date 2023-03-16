@@ -131,7 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_152626) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.integer "price_cents", default: 0, null: false
+    t.integer "price_cents", null: false
     t.string "city"
     t.index ["beach_id"], name: "index_rides_on_beach_id"
     t.index ["user_id"], name: "index_rides_on_user_id"
