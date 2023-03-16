@@ -13,8 +13,9 @@
           <ul class="right-slide-menu-items">
             <% if user_signed_in? %>
               <div class="username">
-                <%= link_to current_user.full_name, dashboard_path%>
+                <%= current_user.full_name %>
               </div>
+              <li><%= link_to "My dashboard", dashboard_path, class: "dropdown-item" %></li>
               <li><%= link_to "My profile", profile_path, class: "dropdown-item" %></li>
               <li><%= link_to "Messages", chatrooms_path, class: "dropdown-item" %></li>
               <li><%= link_to "Create new ride", new_ride_path, class: "dropdown-item" %></li>

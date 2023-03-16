@@ -256,17 +256,73 @@ user_6 = User.new(
   first_name: "Ze",
   last_name: "Manel",
   address: "R. de Santo António 34, 2655-312 Ericeira",
-  car: "Ford Focus",
+  car: "Toyota Auris",
   bio: "I'm a professional gangster from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
 )
 file = URI.open("https://static.wikia.nocookie.net/naruto-onepiece-fairytail/images/9/97/Vinsmoke_Sanji.png/revision/latest?cb=20161215200750")
 user_6.photo.attach(io: file, filename: "user_6.png", content_type: "image/png")
 user_6.save
 
+puts("Creating user 7")
+user_7 = User.new(
+  password: password,
+  email: "molly@gmail.com",
+  first_name: "Molly",
+  last_name: "Picklum",
+  address: "Avenida Vasco Da Gama 34, 2750-509 Cascais",
+  car: "Saab 9-3",
+  bio: "I'm new in Portugal and are looking for people to surf with"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/57d1c8a2faebb02eac61eae0a5398c50.png?&x=96&y=96&icq=74&sig=b97a7f5e152ff2b2d9c807a67e4420a9")
+user_7.photo.attach(io: file, filename: "user_7.png", content_type: "image/png")
+user_7.save
+
+puts("Creating user 8")
+user_8 = User.new(
+  password: password,
+  email: "jack@gmail.com",
+  first_name: "Jack",
+  last_name: "Robinson",
+  address: "Rua Do Mestre Manuel 18, 2825-358 Costa da Caparica",
+  car: "Renault Grand Scenic",
+  bio: "I go surfing almost everyday, TAG ALONG!!!"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/b28faeb9d651e7db1a4bdec4825ae7b0.png?&x=96&y=96&icq=74&sig=f2ad407dac26d1522022424aa8575692")
+user_8.photo.attach(io: file, filename: "user_8.png", content_type: "image/png")
+user_8.save
+
+puts("Creating user 9")
+user_9 = User.new(
+  password: password,
+  email: "carissa@gmail.com",
+  first_name: "Carissa",
+  last_name: "Moore",
+  address: "Azinhaga Do Beiriz 1, 2705-092 Colares",
+  car: "Mazda CX-5",
+  bio: "I like to surf"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/03660681eaddacb77b0a878a5f874c5b.png?&x=96&y=96&icq=74&sig=f00d1b310755c15d24bb2aa469b06d3c")
+user_9.photo.attach(io: file, filename: "user_9.png", content_type: "image/png")
+user_9.save
+
+puts("Creating user 10")
+user_10 = User.new(
+  password: password,
+  email: "joao@gmail.com",
+  first_name: "João",
+  last_name: "Chianca",
+  address: "R Mestre Alonso, 2710-528 Sintra",
+  car: "Volkswagen Touareg",
+  bio: "Let's find some cool waves"
+)
+file = URI.open("https://d3qf8nvav5av0u.cloudfront.net/image/25e287b9309466b7a26db0a376f3e8ef.png?&x=96&y=96&icq=74&sig=6db5fbc8c25102030f9f16aa2ed3f948")
+user_10.photo.attach(io: file, filename: "user_10.png", content_type: "image/png")
+user_10.save
+
 # #Rides
 
-user = [user_1, user_2, user_3, user_4, user_5]
-date_time = [DateTime.parse("16/03/2023 10:00"), DateTime.parse("17/03/2023 15:00"), DateTime.parse("18/03/2023 08:00"), DateTime.parse("19/03/2023 12:00"),DateTime.parse("20/03/2023 17:00"), DateTime.parse("21/03/2023 17:00") ,DateTime.parse("22/03/2023 17:00")]
+user = [user_1, user_2, user_3, user_4, user_5, user_6, user_7, user_8, user_9, user_10]
+date_time = [DateTime.parse("20/03/2023 10:00"), DateTime.parse("17/03/2023 15:00"), DateTime.parse("18/03/2023 08:00"), DateTime.parse("19/03/2023 12:00"),DateTime.parse("22/03/2023 17:00"), DateTime.parse("21/03/2023 17:00") ,DateTime.parse("23/03/2023 17:00")]
 price = [2000, 1000, 1500]
 seats = [1, 2, 3]
 address = ["R. de Santo António, Ericeira", "R Sintra 2710-084 Sintra, Lisboa, Portugal", "Av. Alm. Reis, Lisboa", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
