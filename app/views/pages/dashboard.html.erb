@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <h1 class="mt-4">Bookings</h1>
+    <h1 class="mt-5 mb-3">Bookings</h1>
     <div>
       <% @bookings.each do |booking| %>
         <%= render "booking_card", booking: booking %>
@@ -66,7 +66,7 @@
     </div>
 
     <% unless @user_rides.empty? %>
-      <h1 class="mt-4">Your Rides</h1>
+      <h1 class="mt-5 mb-3">Your Rides</h1>
       <% @user_rides.each do |ride| %>
         <%= render "ride_card", ride: ride %>
       <% end %>

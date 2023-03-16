@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   resources :beaches, only: [] do
     member do
-      post :favorite
+      get :favorite
     end
   end
 end

@@ -1,8 +1,15 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @location.photo.key %>');"></div>
+<div style="position: relative;">
+  <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @location.photo.key %>');">
+    <div class="container">
+      <div style="padding-top: 50px;" class="title d-flex justify-content-center algin-items-center">
+      </div>
+    </div>
+  </div>
+</div>
 
-<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0;">
+<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0; position: relative; margin-top: -40px;">
   <div class="container">
-    <div><h1 class="text-center">Rides to <%= @location.name %></h1></div>
+    <div><h1 class="text-center" style="padding-top: 16px; margin-bottom: 16px;">Rides to <%= @location.name %></h1></div>
       <% @rides.each do |ride|%>
         <%= render "ride_card", ride: ride %>
       <%end%>
