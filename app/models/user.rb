@@ -10,6 +10,13 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  has_many :user1_chatrooms, class_name: "Chatroom", foreign_key: "user1_id"
+  has_many :user2_chatrooms, class_name: "Chatroom", foreign_key: "user2_id"
+
+  def chatrooms
+    user1_chatrooms.or(user2_chatrooms)
+  end
+
   has_many :rides
   has_many :reviews, through: :rides
 
