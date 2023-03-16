@@ -1,28 +1,37 @@
-<div>
-  <div class="show_rides" style="position: relative;">
-    <div class="ms-2" style="position: absolute; top: 38px;">
-      <%= render "shared/back_btn" %>
+
+
+  <div style="position: relative;">
+    <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80');">
+      <div class="container">
+        <div style="padding-top: 50px;" class="title d-flex justify-content-center algin-items-center">
+          <div class="title d-flex justify-content-center">
+            <h1 class="mt-2 ms-3" style="font-size: 30px;"><strong>Messages</strong></h1>
+            <i class="fa-brands fa-rocketchat chat-icon" style="font-size: 30px; padding-left: 8px;"></i>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="title d-flex justify-content-center">
-      <h1 class="mt-2 ms-3" style="font-size: 30px;"><strong>Messages</strong></h1>
-      <i class="fa-brands fa-rocketchat chat-icon" style="font-size: 30px; padding-left: 8px;"></i>
-    </div>
+  </div>
+
+<div style="height: 100px; background-color: white; border-radius: 20px 20px 0 0; position: relative; margin-top: -40px;">
+  <div style="height: 10px; background-color: transparent;">
+  </div>
+  <div>
+    <% @chatrooms.each do |chatroom| %>
+      <div class="bg-transparent card-product mt-3 mx-2">
+          <% if chatroom.user2.photo.attached? %>
+            <%= cl_image_tag chatroom.user2.photo.key %>
+          <% else %>
+            <%= image_tag "user.png" %>
+          <% end %>
+        <div class="card-product-infos">
+          <h2>
+              <p style="font-size: 20px">Chat with </p>
+              <% other_user = chatroom.user1 == current_user ? chatroom.user2 : chatroom.user1%>
+              <%= link_to other_user.full_name, chatroom_path(chatroom) %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-
-<% @chatrooms.each do |chatroom| %>
-  <div class="card-product">
-      <% if chatroom.user2.photo.attached? %>
-        <%= cl_image_tag chatroom.user2.photo.key %>
-      <% else %>
-        <%= image_tag "user.png" %>
-      <% end %>
-    <div class="card-product-infos">
-      <h2>
-          <% other_user = chatroom.user1 == current_user ? chatroom.user2 : chatroom.user1%>
-          <%= link_to other_user.full_name, chatroom_path(chatroom) %>
-      </h2>
-    </div>
-  </div>
-<% end %>
