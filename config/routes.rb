@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   resources :rides, only: %i[index new show create edit update destroy] do
     resources :bookings, only: %i[create]
+    resources :chatrooms, only: :create
+  end
+
+  resources :chatrooms, only: %i[index show] do
+    resources :messages, only: %i[create]
   end
 
   resources :bookings, only: %i[show update] do

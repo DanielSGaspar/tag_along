@@ -2,9 +2,6 @@
   <div style="position: relative;">
     <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @ride.beach.photo.key %>');">
       <div class="container">
-        <div style="position: absolute; top: 50px;">
-          <%= render "shared/back_btn" %>
-        </div>
         <div style="padding-top: 50px;" class="title d-flex justify-content-center algin-items-center">
           <h1 class=""><%= @ride.date_time.strftime("%A") %>, <br> <%= @ride.date_time.strftime("%B") %> <%= @ride.date_time.day %>th</h1>
         </div>
@@ -76,6 +73,23 @@
           </div>
         </div>
 
+  <div>
+    <div class="ride-details">
+      <h2>Driver</h2>
+    </div>
+    <div class="driver-sesh">
+      <% if @ride.user.photo.attached? %>
+        <%= cl_image_tag @ride.user.photo.key %>
+      <% else %>
+        <%= image_tag "user.png" %>
+      <% end %>
+      <div class="driver-sesh-infos" style="position: relative">
+        <h2><%= @ride.user.first_name %></h2>
+        <p>Hello, my name is <%= @ride.user.full_name  %>. Born and raised in Portugal and passionate about the waves of our coast.</p>
+        <div style="position: absolute; margin-top: 6px;"><i class="fa-solid fa-car"></i> Ford F-150</div>
+        <div class="btn-blue">
+          <%= link_to "Message #{@ride.user.first_name}", ride_chatrooms_path(@ride), data: { turbo_method: :post } %>
+        </div>
       </div>
 
       <div>
