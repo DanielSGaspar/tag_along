@@ -1,4 +1,4 @@
-<nav class="navbar bg-transparent position-absolute w-100" style="z-index: +1;">
+<nav class="navbar bg-transparent position-absolute w-100">
   <div class="container-fluid">
     <%= link_to :back, class:"no-text-decoration" do %><i class="fa-solid fa-caret-left back-message"></i><% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -8,7 +8,7 @@
       <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body text-end">
+      <div class="offcanvas-body text-end" style="y-index: +2;">
         <div class="mt-3">
           <ul class="right-slide-menu-items">
             <% if user_signed_in? %>
