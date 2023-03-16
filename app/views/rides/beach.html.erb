@@ -1,10 +1,12 @@
-<div class="banner" style="background-position-y: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @beach.photo.key %>');">
-  <div class="d-flex flex-row-reverse mx-2">
-    <%= render partial: "shared/heart_btn", locals: { beach: @beach } %>
+<div style="position: relative;">
+  <div class="show_rides d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @beach.photo.key %>');">
+    <div class="container d-flex justify-content-end">
+        <%= render partial: "shared/heart_btn", locals: { beach: @beach } %>
+    </div>
   </div>
 </div>
 
-<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0;">
+<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0; position: relative; margin-top: 40px;">
   <div class="container-rides-index-card mx-3">
     <div><h1 class="text-center" style="padding-top: 16px; margin-bottom: 16px;">Rides to <%= @beach.name %></h1></div>
       <% @rides.each do |ride|%>

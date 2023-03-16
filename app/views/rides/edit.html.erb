@@ -1,5 +1,5 @@
 <div style="position: relative;">
-  <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);">
+  <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @ride.beach.photo.key %>);">
     <div class="container">
       <div style="padding-top: 50px;" class="title d-flex justify-content-center algin-items-center">
         <h1>Edit Ride</h1>
@@ -7,9 +7,10 @@
     </div>
   </div>
 </div>
-<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0; position: relative; margin-top: -18px;">
+
+<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0; position: relative; margin-top: -40px;">
   <div class="space-div"></div>
-  <div class="mt-4 ride-new">
+  <div class="mt-4 ride-new" style="border-radius: 20px">
     <%= simple_form_for @ride do |f| %>
       <%= f.association :beach, collection: Beach.order('name ASC'), label: false, prompt: "Beach" %>
       <%= f.input :date_time, as: :datetime, label: false %>

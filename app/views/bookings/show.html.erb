@@ -1,78 +1,87 @@
-<div class="banner" style="position: relative; background-position-y: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520116468816-95b69f847357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);">
-  <div class="container">
-    <h1>Your ride to <%= @ride.beach.name %></h1>
+<div style="position: relative;">
+  <div class="show_rides" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @booking.ride.beach.photo.key %>');">
+    <div class="container">
+      <div style="padding-top: 50px; text-align: center;" class="title d-flex justify-content-center algin-items-center">
+        <h1 class="">Your ride to <br><%= @booking.ride.beach.name %></h1>
+      </div>
+    </div>
   </div>
 </div>
-<div class="container mt-3 d-flex justify-content-between">
-  <h2>Booking details</h2>
-  <% if @booking.state == "pending" %>
-    <div style="background-color: #FF8552; padding: 5px 15px; color: white; border-radius: 10px;">
-      <button id="pay" style="background-color: transparent; border: none; color: white;"><%= @booking.state %></button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const paymentButton = document.getElementById('pay');
 
-          paymentButton.addEventListener('click', () => {
-            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-            stripe.redirectToCheckout({
-              sessionId: '<%= @booking.checkout_session_id %>'
+<div style="background-color: #F2FDFF; border-radius: 20px 20px 0 0; position: relative; margin-top: -40px;">
+
+  <div class="container pt-4 d-flex justify-content-between">
+    <h2>Booking details</h2>
+    <% if @booking.state == "pending" %>
+      <div style="background-color: #FF8552; padding: 5px 15px; color: white; border-radius: 10px;">
+        <button id="pay" style="background-color: transparent; border: none; color: white;"><%= @booking.state %></button>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const paymentButton = document.getElementById('pay');
+
+            paymentButton.addEventListener('click', () => {
+              const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+              stripe.redirectToCheckout({
+                sessionId: '<%= @booking.checkout_session_id %>'
+              });
             });
           });
-        });
-      </script>
-    </div>
-  <% else %>
-    <div style="background-color: #16813c; padding: 5px 15px; color: white; border-radius: 10px;">
-      <p style="margin-bottom: 0;"><%= @booking.state %></p>
-    </div>
-  <% end %>
+        </script>
+      </div>
+    <% else %>
+      <div style="background-color: #16813c; padding: 5px 15px; color: white; border-radius: 10px;">
+        <p style="margin-bottom: 0;"><%= @booking.state %></p>
+      </div>
+    <% end %>
 
-</div>
-<div class="container">
-  <div class="d-flex justify-content-between">
-    <div class="card-location-infos mx-3 mt-3">
-      <div class="d-flex">
-      <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
-        <div>
-          <p><%= @ride.address.match(/^[^,]+(?=,)/) %></p>
-          <div style="font-size: 13px; margin-top: -15px;"><p>Lisboa</p></div>
+  </div>
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div class="card-location-infos mx-3 mt-3">
+        <div class="d-flex">
+        <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+          <div>
+            <p><%= @ride.address.match(/^[^,]+(?=,)/) %></p>
+            <div style="font-size: 13px; margin-top: -15px;"><p><%= @ride.city %></p></div>
+          </div>
         </div>
-      </div>
-      <div class="d-flex">
-      <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
-        <div>
-          <p><%= @ride.beach.address %></p>
-          <div style="font-size: 13px; margin-top: -15px;"><p>Sintra</p></div>
+        <div class="d-flex">
+        <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
+          <div>
+            <p><%= @ride.beach.address.match(/^[^,]+(?=,)/) %></p>
+            <div style="font-size: 13px; margin-top: -15px;"><p><%= @ride.beach.city %></p></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<hr style="border-width: 8px; border-color:#a9a6a6;">
-<div class="container">
-  <p> Date: <strong><%= @ride.date_time.strftime("%B")%> <%= @ride.date_time.day %>th, <%= @ride.date_time.year %></strong></p>
-  <p> Hour: <%= @ride.date_time.strftime("%H:%M")%></p>
-</div>
-<hr style="border-width: 8px; border-color:#a9a6a6;">
-<div class="container">
-  <div class="d-flex justify-content-between align-items-center">
-    <div>
-      <h3 style="margin-bottom: 0;">Total:</h3>
-    </div>
-    <div>
-      <div style="background-color: #61D8EF; border-radius: 35px; padding: 5px 10px;">
-        <div><%= humanized_money_with_symbol(@booking.amount) %></div>
+  <hr style="border-width: 8px; border-color:#a9a6a6;">
+  <div class="container">
+    <p> Date: <strong><%= @ride.date_time.strftime("%B")%> <%= @ride.date_time.day %>th, <%= @ride.date_time.year %></strong></p>
+    <p> Hour: <%= @ride.date_time.strftime("%H:%M")%></p>
+  </div>
+  <hr style="border-width: 8px; border-color:#a9a6a6;">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <h3 style="margin-bottom: 0;">Total:</h3>
+      </div>
+      <div>
+        <div style="background-color: #61D8EF; border-radius: 35px; padding: 5px 10px;">
+          <div><%= humanized_money_with_symbol(@booking.amount) %></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<hr style="border-width: 8px; border-color:#a9a6a6;">
-<div class="container mt-3">
-  <h2>Cancellation Policy</h2>
-  <p><strong>Free cancellation until <%= @ride.date_time.strftime("%B") %> <%= @ride.date_time.day - 1 %>th</strong> Non-refundable for later cancellations.</p>
-</div>
-<hr style="border-width: 8px; border-color:#a9a6a6;">
-<div class="container mt-3">
-  <p><em>Visit <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">TagAlong Booking & Refund Policies</a>, for more information about our cancellation policy. Please TagAlong reserves the right to charge you for any damages you are responsible for.</em></p>
+  <hr style="border-width: 8px; border-color:#a9a6a6;">
+  <div class="container mt-3">
+    <h2>Cancellation Policy</h2>
+    <p><strong>Free cancellation until <%= @ride.date_time.strftime("%B") %> <%= @ride.date_time.day - 1 %>th</strong> Non-refundable for later cancellations.</p>
+  </div>
+  <hr style="border-width: 8px; border-color:#a9a6a6;">
+  <div class="container mt-3">
+    <p><em>Visit <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">TagAlong Booking & Refund Policies</a>, for more information about our cancellation policy. Please TagAlong reserves the right to charge you for any damages you are responsible for.</em></p>
+  </div>
+
 </div>
