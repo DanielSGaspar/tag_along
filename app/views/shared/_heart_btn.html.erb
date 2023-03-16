@@ -1,5 +1,5 @@
-<%= link_to favorite_beach_path, class:"no-text-decoration" do %>
+<%= link_to favorite_beach_path(date: params[:date]), class:"no-text-decoration", id: "favorite_btn_#{dom_id(beach)}" do %>
   <div class="d-flex justify-content-center align-items-center btn-heart">
-    <i class="fa-<%= current_user.favorited?(@beach) ? 'solid' : 'regular' %> fa-heart"></i>
+    <i class="fa-<%= current_user.favorited?(beach) ? 'solid' : 'regular' %> fa-heart"></i>
   </div>
 <% end %>

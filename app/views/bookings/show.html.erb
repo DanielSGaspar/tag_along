@@ -6,7 +6,7 @@
 <div class="container mt-3 d-flex justify-content-between">
   <h2>Booking details</h2>
   <% if @booking.state == "pending" %>
-    <div style="background-color: blue; padding: 5px 15px; color: white;">
+    <div style="background-color: #FF8552; padding: 5px 15px; color: white; border-radius: 10px;">
       <button id="pay" style="background-color: transparent; border: none; color: white;"><%= @booking.state %></button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -23,7 +23,7 @@
       </script>
     </div>
   <% else %>
-    <div style="background-color: green; padding: 5px 15px; color: white;">
+    <div style="background-color: #16813c; padding: 5px 15px; color: white; border-radius: 10px;">
       <p style="margin-bottom: 0;"><%= @booking.state %></p>
     </div>
   <% end %>
@@ -35,7 +35,7 @@
       <div class="d-flex">
       <div><p class="me-2"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i></p></div>
         <div>
-          <p><%= @ride.address %></p>
+          <p><%= @ride.address.match(/^[^,]+(?=,)/) %></p>
           <div style="font-size: 13px; margin-top: -15px;"><p>Lisboa</p></div>
         </div>
       </div>
