@@ -17,6 +17,14 @@ class Ride < ApplicationRecord
   #   beach.location
   # end
 
+  reverse_geocoded_by :latitude, :longitude do |obj, results|
+    if geo = results.first
+      obj.city = geo.city
+    end
+  end
+
+  after_validation :reverse_geocode
+
   scope :today, -> { where(date_time: Date.current.all_day) } # Ride.today
   scope :on_date, ->(date) { where(date_time: Date.parse(date).all_day) }
 

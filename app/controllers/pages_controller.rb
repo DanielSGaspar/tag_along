@@ -29,7 +29,7 @@ class PagesController < ApplicationController
 
     # Favorites
     @favorites = @user.all_favorites.map(&:beach)
-    @bookings = Booking.where(user: @user)
-    @rides = Ride.where(user: @user)
+    @bookings = current_user.bookings.order(created_at: :DESC)
+    @user_rides = current_user.rides
   end
 end

@@ -199,7 +199,7 @@ user_2 = User.new(
   email: "gabriel@gmail.com",
   first_name: "Gabriel",
   last_name: "Medina",
-  address: "R. do Alecrim 47A, 1200-014 Lisboa",
+  address: "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal",
   car: "Renault Clio",
   bio: "I'm a Brazilian professional surfer who won the 2014, 2018 and 2021 WSL World Championships. With 17 WSL Championship Tour (CT) event wins and 29 Final appearances under my belt, I'm one of the most experienced surfers when it comes to producing the best surfing under pressure."
 )
@@ -250,7 +250,7 @@ user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")
 user_5.save
 
 puts("Creating Ze-Manel")
-user_5 = User.new(
+user_6 = User.new(
   password: password,
   email: "zemanel@gmail.com",
   first_name: "Ze",
@@ -260,8 +260,8 @@ user_5 = User.new(
   bio: "I'm a professional gangster from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
 )
 file = URI.open("https://static.wikia.nocookie.net/naruto-onepiece-fairytail/images/9/97/Vinsmoke_Sanji.png/revision/latest?cb=20161215200750")
-user_5.photo.attach(io: file, filename: "user_5.png", content_type: "image/png")
-user_5.save
+user_6.photo.attach(io: file, filename: "user_6.png", content_type: "image/png")
+user_6.save
 
 # #Rides
 
@@ -269,7 +269,7 @@ user = [user_1, user_2, user_3, user_4, user_5]
 date_time = [DateTime.parse("16/03/2023 10:00"), DateTime.parse("17/03/2023 15:00"), DateTime.parse("18/03/2023 08:00"), DateTime.parse("19/03/2023 12:00"),DateTime.parse("20/03/2023 17:00"), DateTime.parse("21/03/2023 17:00") ,DateTime.parse("22/03/2023 17:00")]
 price = [2000, 1000, 1500]
 seats = [1, 2, 3]
-address = ["R. de Santo António, Ericeira", "R Sintra 2710-084 Sintra, Lisboa, Portugal", "Av. Alm. Reis, Lisboa", "R. do Alecrim, Lisboa", "R. Dom Pedro V, Lisboa"]
+address = ["R. de Santo António, Ericeira", "R Sintra 2710-084 Sintra, Lisboa, Portugal", "Av. Alm. Reis, Lisboa", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
 
 counter = 1
 
@@ -291,7 +291,7 @@ end
   ride = Ride.all.sample
   ride = Booking.create!(
     ride: ride,
-    user: User.all.sample,
+    user: user.sample,
     amount_cents: ride.price_cents,
     seats: ride.seats,
     state: "paid"

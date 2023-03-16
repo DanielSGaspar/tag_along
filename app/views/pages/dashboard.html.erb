@@ -65,9 +65,9 @@
       <% end %>
     </div>
 
-    <% unless @rides.nil? %>
+    <% unless @user_rides.empty? %>
       <h1 class="mt-4">Your Rides</h1>
-      <% @rides.each do |ride| %>
+      <% @user_rides.each do |ride| %>
         <%= render "ride_card", ride: ride %>
       <% end %>
     <% end %>
