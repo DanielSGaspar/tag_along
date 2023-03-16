@@ -15,7 +15,7 @@
   <div>
     <% @chatrooms.each do |chatroom| %>
       <%= link_to  chatroom_path(chatroom), class:"no-text-decoration" do %>
-        <div class="bg-transparent card-product mt-3 mx-2 shadow-sm", style="color: black">
+        <div class="bg-transparent card-product mt-3 mx-2 shadow-sm", style="color: black; border-radius: 20px;">
             <% if chatroom.user2.photo.attached? %>
               <%= cl_image_tag chatroom.user2.photo.key, class:"img-profile-chat mb-2" %>
             <% else %>
