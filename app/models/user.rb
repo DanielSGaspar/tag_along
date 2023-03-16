@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :bookings
-  geocoded_by :address
+  geocoded_by :address # Needed for city on beach and location
   after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :user1_chatrooms, class_name: "Chatroom", foreign_key: "user1_id"
@@ -24,7 +24,7 @@ class User < ApplicationRecord
     if geo = results.first
       obj.city = geo.city
     end
-  end
+  end # Needed for city
 
   after_validation :reverse_geocode
 

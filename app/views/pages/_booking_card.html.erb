@@ -1,30 +1,33 @@
 <%= link_to booking_path(booking), class:"no-text-decoration", data: { turbolinks: false }  do %>
-  <div class="booking-card mb-3">
+  <div class="booking-card mb-3 position-relative">
+    <div class="position-absolute" style="top: 16px; right: 0;">
+      <% if booking.state == "pending" %>
+        <div style="background-color: #FF8552; padding: 5px 15px; color: white; border-radius: 20px 0 0 20px;">
+          <p style="margin-bottom: 0;"><%= booking.state %></p>
+        </div>
+      <% else %>
+        <div style="background-color: #57A773; padding: 5px 15px; color: white; border-radius: 20px 0 0 20px;">
+          <p style="margin-bottom: 0;"><%= booking.state %></p>
+        </div>
+      <% end %>
+    </div>
     <div class="d-flex">
-      <div class="img-ride-card d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.saltywaytravel.com/wp-content/uploads/2015/12/10_PraiaPequena_WEB.jpg);">
-          <div style="margin: 0 10px;">
-            <h1><%= booking.ride.beach.name %></h1>
+      <div class="img-ride-card d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path booking.ride.beach.photo.key %>);">
+          <div style="text-align: center;">
+            <h1 style="font-size: 20px;"><%= booking.ride.beach.name %></h1>
           </div>
       </div>
       <div style="width: 50%;" class="mt-3">
         <div class="d-flex justify-content-between">
-          <% if booking.state == "pending" %>
-            <div style="background-color: blue; padding: 5px 15px; color: white;">
-              <p style="margin-bottom: 0;"><%= booking.state %></p>
-            </div>
-          <% else %>
-            <div style="background-color: green; padding: 5px 15px; color: white;">
-              <p style="margin-bottom: 0;"><%= booking.state %></p>
-            </div>
-          <% end %>
         </div>
-        <div class="d-flex mx-4">
-          <p class="me-5 card-date"><i class="fa-solid fa-clock"></i> <%= booking.ride.date_time.strftime("%H:%M") %></p>
+        <div class="d-flex">
+          <p class="card-date" style="margin-bottom: 5px;"><i class="fa-solid fa-clock"></i> <%= booking.ride.date_time.strftime("%H:%M") %></p>
         </div>
         <div class="d-flex justify-content-between">
           <div class="card-location-infos">
-            <p>Pick up location</p>
-            <p style="font-size: 14px;"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i> <%= booking.ride.address %></p>
+            <p style="margin-bottom: 5px;">Pick up:</p>
+            <p style="font-size: 14px; margin-bottom: 0;"><i class="fa-sharp fa-solid fa-location-dot" style="color: #61D8EF;"></i> <%= booking.ride.address.match(/^[^,]+(?=,)/) %></p>
+            <p style="font-size: 14px; padding-left: 14px;"><%= booking.ride.city %></p>
           </div>
         </div>
       </div>
