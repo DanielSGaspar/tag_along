@@ -293,6 +293,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .btn-blue-navbar {
     display: none;
   }
+  .suggestions-wrapper {
+    .suggestions {
+      background-color: #9b9b9b;
+      border-radius: 27px;
+      padding-top: 20px;
+    }
+    li:active, li:hover {
+      background-color: #61d8ef;
+    }
+  }
 }
 
 // Small device
