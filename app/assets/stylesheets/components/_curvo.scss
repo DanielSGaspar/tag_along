@@ -41,9 +41,22 @@
 
 .slide-menu-items {
   list-style: none;
+  color: white;
+  padding-left: 0 !important;
+  li {
+    font-size: 20px;
+    padding-bottom: 40px;
+  }
+  a {
+    font-weight: bold;
+  }
 }
 
 .slide-menu {
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 80vw !important;
+  background: linear-gradient(-20deg, rgb(57, 149, 255) 0%, rgb(97, 216, 239) 50%);
+  width: 50vw !important;
+}
+
+.offcanvas {
+  --bs-offcanvas-border-width: 0px;
 }

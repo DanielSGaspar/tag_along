@@ -17,13 +17,22 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :photo, as: :file,
+                hint: "upload new profile picture",
+                required: false %>
+    <%= f.input :address,
+                required: false,
+                input_html: { autocomplete: "your address" } %>
+    <%= f.input :car,
+                required: false,
+                input_html: { autocomplete: "your car model" } %>
+    <%= f.input :bio,
+                required: false,
+                input_html: { autocomplete: "say something about yourself" } %>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :photo, as: :file,
-                hint: "upload new profile picture",
-                required: false %>
   </div>
 
   <div class="form-actions">

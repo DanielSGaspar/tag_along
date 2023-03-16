@@ -22,6 +22,9 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import PriceUpdateController from "./price_update_controller"
+application.register("price-update", PriceUpdateController)
+
 import ScrollIntoController from "./scroll_into_controller"
 application.register("scroll-into", ScrollIntoController)
 
@@ -30,3 +33,6 @@ application.register("star-rating", StarRatingController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import WheatherApiController from "./wheather_api_controller"
+application.register("wheather-api", WheatherApiController)

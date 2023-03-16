@@ -22,7 +22,40 @@
 
 .profile-info {
   max-width: 55vw;
-  text-align: justify;
-  direction: rtl;
   color: #524d4d;
+}
+
+.bio {
+  text-align: justify;
+  font-size: 14px;
+}
+
+.edit-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: #61D8EF;
+}
+
+
+.edit-position {
+  position: absolute;
+  top: 11.6rem;
+  right: 3.2rem;
+}
+
+.profile-main {
+  margin-top: 30px;
+}
+
+.reviews-div {
+  background-color: white;
+  min-height: 200px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 27px;
+  padding: 18px;
+}
+
+.name-rating {
+  font-weight: bold;
+  color: rgb(239, 183, 0);
 }
