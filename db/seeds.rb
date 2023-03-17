@@ -255,7 +255,7 @@ user_6 = User.new(
   email: "zemanel@gmail.com",
   first_name: "Ze",
   last_name: "Manel",
-  address: "R. de Santo António 34, 2655-312 Ericeira",
+  address: "Rua De Santo António Da Glória, 1250-217 Lisbon, Lisbon, Portugal",
   car: "Toyota Auris",
   bio: "I'm a professional gangster from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
 )
@@ -325,7 +325,7 @@ user = [user_1, user_2, user_3, user_4, user_5, user_7, user_8, user_9, user_10]
 date_time = [DateTime.parse("20/03/2023 10:00"), DateTime.parse("17/03/2023 15:00"), DateTime.parse("18/03/2023 08:00"), DateTime.parse("19/03/2023 12:00"),DateTime.parse("22/03/2023 17:00"), DateTime.parse("21/03/2023 17:00") ,DateTime.parse("23/03/2023 17:00")]
 price = [2000, 1000, 1500]
 seats = [1, 2, 3]
-address = ["R. de Santo António, Ericeira", "Avenida De Roma, 1700-178 Lisbon, Lisbon, Portugal", "Avenida Almirante Reis, 1150-022 Lisbon, Lisbon, Portugal", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
+address = ["Rua Da Praia, 2825-281 Costa da Caparica, Setúbal, Portugal", "Avenida 1º De Maio 36d, 2825-394 Costa da Caparica, Setúbal, Portugal", "Avenida De Roma, 1700-178 Lisbon, Lisbon, Portugal", "Avenida Almirante Reis, 1150-022 Lisbon, Lisbon, Portugal", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
 
 counter = 1
 
