@@ -323,8 +323,8 @@ user_10.save
 
 user = [user_1, user_2, user_3, user_4, user_5, user_7, user_8, user_9, user_10]
 date_time = [DateTime.parse("17/03/2023 10:30"), DateTime.parse("17/03/2023 08:00"), DateTime.parse("17/03/2023 16:00"), DateTime.parse("18/03/2023 06:30"),DateTime.parse("18/03/2023 11:00"), DateTime.parse("18/03/2023 14:00") , DateTime.parse("19/03/2023 08:45"), DateTime.parse("19/03/2023 10:00"), DateTime.parse("19/03/2023 13:00")]
-price = [2000, 1000, 1500]
-seats = [1, 2, 3]
+price = [500, 750, 800]
+seats = [2, 3, 4]
 address = ["Rua Da Praia, 2825-281 Costa da Caparica, Setúbal, Portugal", "Avenida 1º De Maio 36d, 2825-394 Costa da Caparica, Setúbal, Portugal", "Avenida De Roma, 1700-178 Lisbon, Lisbon, Portugal", "Avenida Almirante Reis, 1150-022 Lisbon, Lisbon, Portugal", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
 
 counter = 1
