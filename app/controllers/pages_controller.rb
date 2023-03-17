@@ -17,7 +17,7 @@ class PagesController < ApplicationController
       @popular << ride.beach
     end
     @popular = @popular.uniq
-    @popular = @popular.sort_by { |beach| beach.rides.size }.reverse!.first(5)
+    @popular = @popular.sort_by { |beach| beach.rides.on_date(@date).count }.reverse!.first(5)
 
     # Locations
     @locations = []
@@ -25,7 +25,7 @@ class PagesController < ApplicationController
       @locations << ride.beach.location
     end
     @locations = @locations.uniq
-    @locations = @locations.sort_by { |beach| beach.rides.size }.reverse!.first(5)
+    @locations = @locations.sort_by { |beach| beach.rides.on_date(@date).size }.reverse!.first(5)
 
     # Favorites
     @favorites = @user.all_favorites.map(&:beach)
