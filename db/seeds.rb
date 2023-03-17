@@ -256,7 +256,7 @@ user_6 = User.new(
   first_name: "Ze",
   last_name: "Manel",
   address: "Rua De Santo António Da Glória, 1250-217 Lisbon, Lisbon, Portugal",
-  car: "Toyota Auris",
+  car: "",
   bio: "I'm a professional gangster from Sunset Beach on Oahu's North Shore. A member of the Ho surfing dynasty, I'm is the son of professional surfer Michael Ho, brother of Coco Ho, and nephew to World Champion surfer Derek Ho."
 )
 file = URI.open("https://static.wikia.nocookie.net/naruto-onepiece-fairytail/images/9/97/Vinsmoke_Sanji.png/revision/latest?cb=20161215200750")
