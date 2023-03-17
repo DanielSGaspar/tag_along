@@ -263,12 +263,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       border-radius: 25px;
     }
     .mapboxgl-ctrl-geocoder--input {
-      text-align: center;
+      // text-align: center;
+      padding-left: 29px;
     }
   }
   #search_location {
     border-radius: 25px;
-    text-align: center;
+    // text-align: center;
     padding-left: 30px;
   }
   #search_date_time {
