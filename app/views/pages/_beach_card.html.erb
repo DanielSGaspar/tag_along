@@ -5,7 +5,7 @@
   data-wheather-api-lat-value="<%= beach.latitude %>"
   data-wheather-api-long-value="<%= beach.longitude %>"
   data-wheather-api-api-key-value="<%= ENV['STORMGLASS_API_KEY'] %>">
-    <h1 class="absolute beach-name"><%= beach.name %></h1>
+    <h1 class="absolute beach-name" style="white-space: pre-wrap;"><%= beach.name %></h1>
     <div class="d-flex absolute rides-tag"><p class="zero-bottom">Rides: <%= beach.rides.on_date(@date).count %></p></div>
     <div class="contidions-container">
       <div class="wind-container">
