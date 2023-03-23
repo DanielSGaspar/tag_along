@@ -12,11 +12,11 @@
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
       <span class="navbar-toggler-icon hide-large"></span>
-      <%= link_to "Sign in", "#", class: "hide-small btn-blue-navbar" %>
       <% if user_signed_in? %>
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle hide-small", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
+          <%= link_to "Sign in", "#", class: "hide-small btn-blue-navbar" %>
           <%= image_tag "user.png", class: "avatar dropdown-toggle hide-small", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
 
