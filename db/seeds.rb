@@ -322,14 +322,54 @@ user_10.save
 # #Rides
 
 user = [user_1, user_2, user_3, user_4, user_5, user_7, user_8, user_9, user_10]
-date_time = [DateTime.parse("17/03/2023 10:30"), DateTime.parse("17/03/2023 08:00"), DateTime.parse("17/03/2023 16:00"), DateTime.parse("18/03/2023 06:30"),DateTime.parse("18/03/2023 11:00"), DateTime.parse("18/03/2023 14:00") , DateTime.parse("19/03/2023 08:45"), DateTime.parse("19/03/2023 10:00"), DateTime.parse("19/03/2023 13:00")]
+date_time = [
+  DateTime.parse("29/03/2023 08:45"),
+  DateTime.parse("29/03/2023 10:00"),
+  DateTime.parse("29/03/2023 13:00"),
+  DateTime.parse("30/03/2023 08:45"),
+  DateTime.parse("30/03/2023 10:00"),
+  DateTime.parse("30/03/2023 13:00"),
+  DateTime.parse("31/03/2023 08:45"),
+  DateTime.parse("31/03/2023 10:00"),
+  DateTime.parse("31/03/2023 13:00"),
+  DateTime.parse("01/04/2023 08:45"),
+  DateTime.parse("01/04/2023 10:00"),
+  DateTime.parse("01/04/2023 13:00"),
+  DateTime.parse("02/04/2023 08:45"),
+  DateTime.parse("02/04/2023 10:00"),
+  DateTime.parse("02/04/2023 13:00"),
+  DateTime.parse("03/04/2023 08:45"),
+  DateTime.parse("03/04/2023 10:00"),
+  DateTime.parse("03/04/2023 13:00"),
+  DateTime.parse("04/04/2023 08:45"),
+  DateTime.parse("04/04/2023 10:00"),
+  DateTime.parse("04/04/2023 13:00"),
+  DateTime.parse("05/04/2023 08:45"),
+  DateTime.parse("05/04/2023 10:00"),
+  DateTime.parse("05/04/2023 13:00"),
+  DateTime.parse("06/04/2023 08:45"),
+  DateTime.parse("06/04/2023 10:00"),
+  DateTime.parse("06/04/2023 13:00"),
+  DateTime.parse("07/04/2023 08:45"),
+  DateTime.parse("07/04/2023 10:00"),
+  DateTime.parse("07/04/2023 13:00"),
+  DateTime.parse("08/04/2023 08:45"),
+  DateTime.parse("08/04/2023 10:00"),
+  DateTime.parse("08/04/2023 13:00"),
+  DateTime.parse("09/04/2023 08:45"),
+  DateTime.parse("09/04/2023 10:00"),
+  DateTime.parse("09/04/2023 13:00"),
+  DateTime.parse("10/04/2023 08:45"),
+  DateTime.parse("10/04/2023 10:00"),
+  DateTime.parse("10/04/2023 13:00"),
+]
 price = [500, 700, 800]
 seats = [2, 3, 4]
 address = ["Rua Da Praia, 2825-281 Costa da Caparica, Setúbal, Portugal", "Avenida 1º De Maio 36d, 2825-394 Costa da Caparica, Setúbal, Portugal", "Avenida De Roma, 1700-178 Lisbon, Lisbon, Portugal", "Avenida Almirante Reis, 1150-022 Lisbon, Lisbon, Portugal", "Rua De São Paulo, 1200-429 Lisboa, Lisboa, Portugal", "R. Dom Pedro V, Lisboa"]
 
 counter = 1
 
-70.times do
+300.times do
   puts "Creating ride ##{counter}"
   ride = Ride.create(
     user: user.sample,
@@ -345,7 +385,7 @@ end
 30.times do
   puts "Creating booking"
   ride = Ride.all.sample
-  ride = Booking.create!(
+  Booking.create!(
     ride: ride,
     user: user.sample,
     amount_cents: ride.price_cents,
@@ -359,7 +399,7 @@ content = ["Had a surf trip of a lifetime and can't thank and recommend enough!"
 
 30.times do
   puts "Creating review"
-  ride = Review.create!(
+  Review.create!(
     booking: Booking.all.sample,
     rating: rating.sample,
     content: content.sample
