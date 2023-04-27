@@ -28,7 +28,7 @@ Tag Along is a web app that helps surfers without a car get to beaches around Li
 - Location-based suggestions have some issues.
 
 ## Installation and Usage
-As Tag Along is a web app, there is no need to install it. Simply go to the app's website and create an account to use it. You can browse available rides, book a seat, or offer a ride if you have a car. Please note that the seeds are limited. Currently there are rides from Lisbon until the 31st of March. Seeds will be updated. If you encounter any bugs or issues, please feel free to contact me through GitHub.
+As Tag Along is a web app, there is no need to install it. Simply go to the app's website and create an account to use it. You can browse available rides, book a seat, or offer a ride if you have a car. Please note that the seeds are limited. Currently there are rides from Lisbon until the 10th of April. Seeds will be updated. If you encounter any bugs or issues, please feel free to contact me through GitHub.
 
 ## Contributions
 
