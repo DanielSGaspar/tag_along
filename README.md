@@ -27,8 +27,22 @@ Tag Along is a web app that helps surfers without a car get to beaches around Li
 - The back button does not work intuitively; it merely takes you to the previous page, which can be problematic when you are two layers deep and want to go back to the dashboard. You would have to use the dashboard button in the burger menu.
 - Location-based suggestions have some issues.
 
-## Installation and Usage
-As Tag Along is a web app, there is no need to install it. Simply go to the app's website and create an account to use it. You can browse available rides, book a seat, or offer a ride if you have a car. Please note that the seeds are limited. Currently there are rides from Lisbon until the 10th of April. Seeds will be updated. If you encounter any bugs or issues, please feel free to contact me through GitHub.
+## Getting Started
+
+To get the Rails application up and running, follow these steps:
+
+1. Clone the repository
+2. Change directory to the cloned repository: `cd your-repo-name`
+3. Install the required dependencies by running: `bundle install`
+4. Create the database: `rails db:create`
+5. Run database migrations: `rails db:migrate`
+6. Seed the database with sample data, if any: `rails db:seed`. (Make sure you update the dates in the seed file to have rides displayed)
+7. Start the Rails server: `dev`
+8. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to view the app
+
+If you encounter any issues or errors, please refer to the Rails documentation or the project's specific documentation for further assistance.
+
+**Note:** The above instructions assume you have Ruby, Rails, and the required dependencies installed on your system. If you do not have them installed, please refer to the official Ruby and Rails installation guides before proceeding with the above steps.
 
 ## Contributions
 
